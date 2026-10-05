@@ -303,58 +303,64 @@ const PROJECTS_DATA = [
   {
     id: "sweeper",
     title: "Sweeper",
-    tagline: "Thiết kế Website UI/UX & Hệ thống Design System trải nghiệm số",
+    tagline: "Bộ Cẩm nang Quy chuẩn Thương hiệu & Hệ thống Thiết kế Giao diện UI/UX Toàn diện",
     category: "digital",
-    categoryLabel: "Website UI/UX",
+    categoryLabel: "Website UI/UX & Brand Identity",
     client: "Sweeper",
-    role: "Lead UI/UX Designer",
+    role: "Lead UI/UX & Brand Designer",
     duration: "6 tuần",
-    services: ["Website UI/UX", "UI Design System", "E-commerce Experience", "Interactive Prototype"],
+    services: ["Website UI/UX", "Brand Guidelines", "UI Design System", "Responsive Web & Mobile App"],
     featured: true,
-    accentColor: "#F59E0B",
-    summary: "Thiết kế hệ sinh thái website UI/UX thương mại điện tử và dịch vụ chăm sóc giày thể thao cho Sweeper, xây dựng trải nghiệm mua sắm sản phẩm và đặt lịch dịch vụ mượt mà, đậm chất văn hóa sneaker streetwear.",
+    accentColor: "#E9C31E",
+    showcaseImage: "assets/sweeper-showcase.jpg",
+    showcaseImages: Array.from({ length: 27 }, (_, i) => "assets/sweeper/page-" + String(i + 1).padStart(2, "0") + ".jpg"),
+    pdfGuideline: "assets/Sweeper.pdf",
+    aspectRatio: "1600 / 25704",
+    showcaseBg: "#ffffff",
+    summary: "Bộ cẩm nang nhận diện thương hiệu & Thiết kế giao diện số toàn diện 27 trang cho Sweeper (Sweeper Intro Book) — thương hiệu dịch vụ chăm sóc, vệ sinh và phục hồi giày thể thao thủ công chuyên nghiệp, kết hợp phân phối sản phẩm Crep Protect cao cấp. Dự án chuẩn hóa trọn vẹn 4 phần: 01. Giới thiệu thương hiệu & Triết lý vệ sinh giày thủ công 100% trong phòng chuyên biệt; 02. Logo & Quy chuẩn tỷ lệ lưới 14x × 2x, khoảng cách an toàn safezone 2x, màu sắc (#E9C31E, #9A712A) và Typography Never Better; 03. Hướng dẫn UI Guide với hệ màu Web, icon & button, phân cấp Typography Poppins (18px - 56px); 04. Bố cục Layout, Wireframe sitemap, hệ thống lưới chuẩn (Web 1920px 12 cột & Mobile App 414px) và thiết kế giao diện đa thiết bị Desktop, Tablet, Mobile.",
     brief: {
-      clientIntro: "Sweeper là thương hiệu cung cấp dịch vụ vệ sinh, phục hồi giày và phân phối các bộ sản phẩm chăm sóc giày thể thao cao cấp (Crep Protect).",
-      challenge: "Trải nghiệm mua hàng trực tuyến trước đây còn đơn điệu, luồng đặt dịch vụ vệ sinh giày phức tạp khiến tỷ lệ rơi rớt đơn hàng cao và chưa tạo được dấu ấn phong cách giới trẻ.",
-      objective: "Tái thiết kế toàn diện UI/UX trang web: Trang chủ, danh mục sản phẩm, bộ kit vệ sinh và quy trình booking dịch vụ nhanh gọn trong 3 bước."
+      clientIntro: "Sweeper là thương hiệu dịch vụ vệ sinh và phục hồi giày thể thao uy tín với 100% thao tác thủ công, sử dụng công nghệ hút ẩm và hong khô phòng chuyên biệt, đồng thời phân phối các dòng sản phẩm làm sạch giày cao cấp Crep Protect.",
+      challenge: "Cần xây dựng bộ cẩm nang nhận diện thương hiệu kết hợp chuẩn hóa toàn diện thiết kế trải nghiệm số (UI/UX) cho cả website thương mại điện tử và ứng dụng di động, giải quyết bài toán đặt lịch dịch vụ và mua sắm sản phẩm mượt mà, đồng bộ nhận diện đa nền tảng.",
+      objective: "Thiết kế hoàn thiện bộ tài liệu Sweeper Intro Book 27 trang: Quy chuẩn logo & font chữ; Hệ thống UI Guide (Web Color, Icons, Buttons, Typography Poppins); Sơ đồ cấu trúc Sitemap; Wireframe lưới chuẩn và hệ thống màn hình hoàn chỉnh cho Web (Home, Services, Services Details, Products, Shop, Contact, Cleaning Locations, Checkout, Cart) cùng giao diện Mobile App."
     },
     concept: {
-      bigIdea: "Keep Kicks Fresh — Trải nghiệm số tràn đầy năng lượng tươi mới dành riêng cho cộng đồng yêu giày sneaker.",
-      approach: "Bố cục UI thoáng đãng, hiện đại với hiệu ứng 3D sneaker floating nổi bật. Kết hợp sắc vàng năng động thương hiệu trên nền trắng - xám thanh lịch, nút bấm CTA lớn và luồng thao tác siêu tốc.",
+      bigIdea: "Let Us Make Your Shoes Fresher — Vẻ đẹp tinh tế của kỹ thuật chăm sóc giày thủ công kết hợp trải nghiệm mua sắm số hiện đại.",
+      approach: "Logo Sweeper với đường nét chắc chắn, xếp lớp vững chãi thể hiện quy trình chăm sóc tỉ mỉ từng bước. Kết hợp sắc vàng tươi (#E9C31E), nâu vàng (#9A712A), xanh navy đậm (#1E293B) và nền trắng tối giản. Giao diện trực quan với hình ảnh giày sneaker 3D nổi bật, hệ thống lưới chuẩn 12 cột và luồng đặt dịch vụ siêu tốc.",
       designPrinciples: [
-        { title: "Streetwear Energy", desc: "Đưa tinh thần sneakerhead phóng khoáng và tươi trẻ vào từng khối nội dung và chuyển động giao diện." },
-        { title: "Seamless Checkout", desc: "Tối giản quy trình thêm giỏ hàng và đặt dịch vụ vệ sinh giày chỉ với vài cú nhấp chuột." },
-        { title: "Design System Scalability", desc: "Hệ thống component tái sử dụng cao trên Figma, sẵn sàng mở rộng cho ứng dụng di động trong tương lai." }
+        { title: "Chăm sóc thủ công & Tin cậy", desc: "Đường nét logo và layout thể hiện sự vững chắc, kỹ lưỡng và an tâm tuyệt đối cho khách hàng gửi gắm những đôi giày đắt giá." },
+        { title: "Trực quan & Hiện đại", desc: "Hình ảnh sản phẩm sneaker 3D sống động, phân cấp thông tin rõ ràng theo tỷ lệ typography Poppins từ 18px đến 56px." },
+        { title: "Đồng bộ đa nền tảng (Responsive)", desc: "Hệ thống lưới chuẩn xác: Grid Web 1920px (12 cột, width 100px, gutter 30px) và Mobile App 414px (margin 16px, gutter 20px) đảm bảo trải nghiệm liền mạch trên mọi thiết bị." }
       ]
     },
     designSystem: {
       colors: [
-        { name: "Sweeper Yellow", hex: "#F59E0B", role: "Primary Brand Signature" },
-        { name: "Carbon Ink", hex: "#111827", role: "Typography & Bold Elements" },
-        { name: "Sneaker White", hex: "#F9FAFB", role: "Card & Surface Base" },
-        { name: "Cool Slate", hex: "#64748B", role: "Supporting Neutral" }
+        { name: "Sweeper Yellow", hex: "#E9C31E", role: "Primary Brand & Nút bấm CTA (CMYK: 10-20-100-0)" },
+        { name: "Dark Ochre", hex: "#9A712A", role: "Logo Shadow & Chiều sâu nhận diện (CMYK: 34-52-100-16)" },
+        { name: "Midnight Navy", hex: "#1E293B", role: "Web Primary & Khối Dark Surface" },
+        { name: "Clean White", hex: "#FFFFFF", role: "Nền giao diện & Khoảng thở tinh sạch" },
+        { name: "Support Accent", hex: "#EF4444", role: "Màu bổ trợ cảnh báo & Điểm nhấn Flash Sale" }
       ],
       typography: {
-        headline: "Plus Jakarta Sans & Space Grotesk — Khỏe khoắn, đậm nét hiện đại",
-        body: "Plus Jakarta Sans — Rõ ràng, tối ưu trải nghiệm thương mại điện tử"
+        headline: "NEVER BETTER — Font chữ hiển thị mạnh mẽ, góc cạnh và đậm chất thể thao",
+        body: "Poppins (18px - 56px) — Hiện đại, hình học chuẩn mực cho giao diện số Web & Mobile"
       }
     },
     deliverables: [
-      "Thiết kế UI/UX toàn diện: Trang chủ, Shop, Dịch vụ, Giỏ hàng, Booking Flow",
-      "Bản mẫu tương tác Interactive Prototype trên Figma (Responsive Desktop & Mobile)",
-      "UI Kit & Design System với 120+ Components, Variants và Auto-layout",
-      "Bộ hướng dẫn quy chuẩn giao diện (UI Guideline Documentation)"
+      "01. INTRODUCE: Giới thiệu thương hiệu, sứ mệnh bảo vệ và chăm sóc giày thủ công cao cấp",
+      "02. LOGO & GUIDELINES: Ý nghĩa cấu trúc logo, tỷ lệ lưới 14x × 2x, khoảng cách an toàn 2x, hệ màu quy chuẩn & Font Never Better",
+      "03. UI GUIDE: Bảng màu Web (Primary, Variants, Support, Grayscales), Web Icons, Buttons & Thang Typography Poppins (18px - 56px)",
+      "04. LAYOUT & RESPONSIVE: Cấu trúc Sitemap toàn diện, Wireframe & Grid (Web 1920px 12 cột & Mobile 414px), Màn hình UI chi tiết (Home, Services, Shop, Contact, Locations, Checkout, Cart) & Thiết kế Responsive Desktop, Tablet, Mobile"
     ],
     outcome: {
-      summary: "Website UI/UX mới giúp Sweeper bứt phá doanh số bán lẻ trực tuyến và tối ưu hóa vận hành dịch vụ chăm sóc giày.",
+      summary: "Bộ tài liệu Sweeper Intro Book 27 trang chuẩn hóa toàn diện từ nhận diện thương hiệu đến hệ thống UI/UX Web và Mobile App, tạo tiền đề bứt phá doanh số bán lẻ trực tuyến và tối ưu hóa vận hành dịch vụ.",
       metrics: [
-        { label: "Tăng trưởng doanh thu online", value: "+54%" },
-        { label: "Giảm tỷ lệ bỏ giỏ hàng", value: "-35%" },
-        { label: "Điểm đánh giá trải nghiệm UI", value: "4.9/5" }
+        { label: "Quy chuẩn Guideline", value: "27 trang" },
+        { label: "Màn hình UI chuẩn hóa", value: "12+ screens" },
+        { label: "Nền tảng hỗ trợ", value: "Web & Mobile" }
       ],
-      detail: "Giao diện mới mang lại trải nghiệm đặt hàng cực kỳ thuận tiện, nâng cao uy tín thương hiệu trong cộng đồng sneakerhead và đối tác."
+      detail: "Cẩm nang hướng dẫn đầy đủ từ wireframe, grid system đến giao diện tương tác thực tế, giúp đội ngũ lập trình và vận hành triển khai chính xác 100% tinh thần thiết kế."
     },
-    coverGradient: "linear-gradient(135deg, #18181b 0%, #27272a 50%, #f59e0b 100%)",
+    coverGradient: "linear-gradient(135deg, #18181b 0%, #27272a 50%, #e9c31e 100%)",
     svgVisual: "sweeper"
   },
   {
