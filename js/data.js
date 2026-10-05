@@ -473,59 +473,67 @@ const PROJECTS_DATA = [
   },
   {
     id: "tayo-tea",
-    title: "Tayo tea",
-    tagline: "Bộ Nhận diện Thương hiệu & Thiết kế Bao bì Trà Cao cấp",
+    title: "Taiyo tea",
+    tagline: "Cẩm nang Quy chuẩn Thương hiệu & Hệ thống Nhận diện Trà Nhật Bản Toàn diện",
     category: "packaging",
-    categoryLabel: "Nhận diện thương hiệu & Bao bì",
-    client: "Tayo Tea Co.",
-    role: "Brand Identity & Packaging Designer",
+    categoryLabel: "Packaging & Brand Identity",
+    client: "Taiyo Tea Co.",
+    role: "Lead Brand Identity & Packaging Designer",
     duration: "5 tuần",
-    services: ["Bộ nhận diện thương hiệu", "Thiết kế bao bì túi trà", "Dập nổi & Gia công in ấn", "Brand Guidelines"],
-    featured: false,
-    accentColor: "#C29B38",
-    summary: "Thiết kế bộ nhận diện thương hiệu và bao bì túi trà thủ công cao cấp cho Tayo tea. Khai thác vẻ đẹp mộc mạc của chất liệu giấy mỹ thuật tự nhiên kết hợp kỹ thuật dập nổi khuôn tròn tối giản, mang lại trải nghiệm thưởng trà thanh tao và đậm đà phong vị văn hóa trà đạo.",
+    services: ["Brand Guidelines", "Bộ nhận diện thương hiệu", "Thiết kế bao bì trà", "Ấn phẩm văn phòng & Quà tặng"],
+    featured: true,
+    accentColor: "#D91C24",
+    showcaseImage: "assets/taiyo-showcase.jpg",
+    showcaseImages: Array.from({ length: 43 }, (_, i) => "assets/taiyo/page-" + String(i + 1).padStart(2, "0") + ".jpg"),
+    pdfGuideline: "assets/Taiyotea-Brand-guideline.pdf",
+    aspectRatio: "1600 / 40936",
+    showcaseBg: "#ffffff",
+    summary: "Hệ thống quy chuẩn nhận diện thương hiệu toàn diện (Brand Guideline 43 trang) cho Taiyo tea (太陽のお茶) — thương hiệu trà Nhật Bản cao cấp mang tinh thần Hòa - Kính - Thanh - Tịnh với thông điệp 'Bình thản uống trà, bình thản sống'. Dự án bao gồm đầy đủ 6 phần: Giới thiệu thương hiệu & Triết lý trà đạo; Quy chuẩn Logo kết hợp lá trà - chữ Hán 太陽 - quốc kỳ Nhật & Typeface UTM AKASHI; Bộ nhận diện văn phòng Stationery; Thiết kế bao bì hộp thiếc và hộp túi lọc (Genmaicha, Sencha, Hojicha); Ấn phẩm quảng cáo POSM và Hệ thống quà tặng cao cấp.",
     brief: {
-      clientIntro: "Tayo tea là thương hiệu trà thủ công thượng hạng, tuyển chọn những búp trà cổ thụ thuần khiết từ các vùng núi cao, hướng tới những người yêu thích nghệ thuật trà đạo và lối sống an yên.",
-      challenge: "Thị trường trà quà tặng cao cấp đòi hỏi sự khác biệt sâu sắc: không sa đà vào các chi tiết trang trí rườm rà mà phải toát lên được chiều sâu văn hóa, sự tinh khiết và trải nghiệm xúc giác cao cấp khi cầm nắm sản phẩm trên tay.",
-      objective: "Sáng tạo logo biểu trưng Tayo tea tối giản với cấu trúc hình tròn thiền định (Enso/Tea seal); thiết kế quy chuẩn bao bì túi trà giấy kraft/mỹ thuật dập nổi blind emboss và hệ thống nhận diện thương hiệu toàn diện."
+      clientIntro: "Taiyo tea (太陽のお茶) là thương hiệu trà đạo Nhật Bản cao cấp với thông điệp 'Bình thản uống trà, bình thản sống', hội tụ 4 giá trị cốt lõi: Hòa - Kính - Thanh - Tịnh.",
+      challenge: "Cần xây dựng cẩm nang thương hiệu toàn diện dày 43 trang, chuẩn hóa từ cấu trúc hình học logo, font chữ UTM AKASHI, màu sắc quy chuẩn, bộ nhận diện văn phòng đến hệ thống bao bì hộp thiếc kim loại, túi lọc và ấn phẩm truyền thông thực tế.",
+      objective: "Thiết kế trọn vẹn bộ cẩm nang Brand Guideline 43 trang: chuẩn hóa logo biểu trưng kết hợp lá trà - chữ Hán 太陽 - mặt trời cờ Nhật Bản; bao bì sản phẩm (Genmaicha, Sencha, Hojicha) và bộ quà tặng doanh nghiệp."
     },
     concept: {
-      bigIdea: "Chạm Vào Tĩnh Lặng — Thưởng trọn vị trà nguyên bản trong sự tĩnh tại của tâm hồn.",
-      approach: "Triết lý thiết kế tối giản tôn vinh chất liệu tự nhiên. Sử dụng biểu tượng con dấu tròn dập nổi chìm trên nền giấy sần xúc giác, kết hợp tông màu trắng tinh khiết, vàng hổ phách của nước trà và nâu mộc mạc của lá trà khô.",
+      bigIdea: "Bình thản uống trà, bình thản sống — Tinh hoa trà đạo và thiền định Nhật Bản.",
+      approach: "Kết hợp biểu tượng lá trà tự nhiên, chữ Hán 太陽 (Thái Dương - Mặt trời) và hình tượng vòng tròn đỏ quốc kỳ Nhật Bản tạo nên dấu ấn thị giác độc bản. Sử dụng font chữ UTM AKASHI góc cạnh kết hợp nét cong mềm mại, bảng màu truyền thống đỏ mặt trời (#D91C24), xanh lá trà đậm (#234032), nâu trà sấy (#3D2314) và màu mực đen truyền thống.",
       designPrinciples: [
-        { title: "Tactile Minimalism", desc: "Tận dụng kỹ thuật dập nổi không mực (Blind Embossing) trên giấy mỹ thuật để tạo cảm giác sang trọng từ xúc giác." },
-        { title: "Zen Harmony", desc: "Bố cục cân bằng tĩnh tại, lược bỏ mọi chi tiết thừa để hướng sự tập trung vào hương vị tinh túy của búp trà." },
-        { title: "Sustainable Craft", desc: "Lựa chọn chất liệu giấy thân thiện môi trường, tái hiện trọn vẹn tinh thần tôn trọng thiên nhiên của trà đạo." }
+        { title: "Hòa - Kính - Thanh - Tịnh", desc: "Bốn giá trị cốt lõi của trà đạo định hướng mọi tỷ lệ, khoảng cách và chi tiết thiết kế." },
+        { title: "Văn hóa & Đương đại", desc: "Dung hòa mỹ thuật truyền thống Nhật Bản với bố cục layout tối giản, chuẩn mực quốc tế." },
+        { title: "Ứng dụng đa chiều", desc: "Quy chuẩn đồng bộ trên mọi chất liệu: dập nổi trên giấy mỹ thuật, in ấn bao bì hộp thiếc kim loại, túi lọc và ấn phẩm quảng cáo." }
       ]
     },
     designSystem: {
       colors: [
-        { name: "Amber Tea Gold", hex: "#C29B38", role: "Tea Brew Essence" },
-        { name: "Raw Paper White", hex: "#F8F6F0", role: "Tactile Paper Pouch" },
-        { name: "Tea Leaf Charcoal", hex: "#292524", role: "Refined Typography" },
-        { name: "Warm Ochre", hex: "#9A7B38", role: "Seal Accent" }
+        { name: "Taiyo Red", hex: "#D91C24", role: "Biểu trưng Mặt trời & Con dấu" },
+        { name: "Tea Leaf Dark Green", hex: "#234032", role: "Sắc xanh trà & Bao bì Genmaicha" },
+        { name: "Midnight Navy", hex: "#152238", role: "Bao bì Sencha cao cấp" },
+        { name: "Roasted Hojicha Brown", hex: "#3D2314", role: "Bao bì Hojicha sấy" },
+        { name: "Pure Paper White", hex: "#FFFFFF", role: "Nền giấy & Khoảng thở tinh khiết" }
       ],
       typography: {
-        headline: "Cormorant Garamond & Cinzel — Cổ điển, thanh lịch và đậm chất thi ca",
-        body: "Plus Jakarta Sans — Tối giản, rõ ràng cho hướng dẫn pha trà và nguồn gốc xuất xứ"
+        headline: "UTM AKASHI — Hội tụ mềm mại, góc cạnh và vững chắc",
+        body: "Roboto & Plus Jakarta Sans — Tối giản, rõ ràng cho thông tin quy chuẩn"
       }
     },
     deliverables: [
-      "Bộ biểu trưng Logo dấu ấn tròn Tayo tea (Primary Logo, Sub-marks, Stamp Seal)",
-      "Hệ thống quy chuẩn bao bì: Túi zip trà giấy mỹ thuật, nhãn dán thủ công, hộp quà cao cấp",
-      "File khuôn kỹ thuật dập nổi đa tầng (Blind Emboss Dielines & Tooling Files)",
-      "Bộ ấn phẩm nhận diện thương hiệu: Danh thiếp, thẻ câu chuyện trà (Story Card), túi quà tặng"
+      "01. INTRODUCE: Giới thiệu thương hiệu & Triết lý Hòa - Kính - Thanh - Tịnh",
+      "02. LOGO'S BRAND: Ý nghĩa logo, tỷ lệ lưới, khoảng cách an toàn, bảng màu & Typeface UTM AKASHI",
+      "03. STATIONERY: Namecard, tiêu đề thư, phong bì A4/A5, kẹp file, thẻ nhân viên, đồng phục",
+      "04. PRODUCTS: Thiết kế bao bì hộp thiếc & hộp túi lọc (Genmaicha, Sencha, Hojicha), bản vẽ kỹ thuật dieline",
+      "05. ADVERTISING: Poster truyền thông, Standee, Billboard ngoài trời",
+      "06. GIFT: Hộp quà tặng cao cấp, túi giấy, bộ ấm tách trà đạo"
     ],
     outcome: {
-      summary: "Bộ nhận diện và bao bì Tayo tea nhận được sự tán thưởng nhiệt liệt từ giới sành trà và giúp thương hiệu hiện diện tại các phòng trà, resort cao cấp.",
+      summary: "Bộ Brand Guideline 43 trang được hoàn thiện chuẩn mực, tạo nền tảng vững chắc cho việc triển khai sản xuất hàng loạt bao bì và đồng bộ hóa truyền thông thương hiệu Taiyo tea.",
       metrics: [
-        { label: "Đơn hàng quà tặng cao cấp", value: "+120%" },
-        { label: "Tỷ lệ khách hàng mua lại", value: "85%" },
-        { label: "Đánh giá thiết kế bao bì", value: "5.0/5" }
+        { label: "Quy chuẩn Guideline", value: "43 trang" },
+        { label: "Dòng sản phẩm bao bì", value: "6 SKU" },
+        { label: "Độ chuẩn hóa ấn phẩm", value: "100%" }
       ],
-      detail: "Bao bì dập nổi trên chất liệu giấy thủ công tạo hiệu ứng lan tỏa tự nhiên trên mạng xã hội khi khách hàng thưởng trà chia sẻ trải nghiệm unboxing."
+      detail: "Hệ thống thiết kế nhận được đánh giá cao về tính ứng dụng thực tế và tính mỹ thuật đậm đà bản sắc văn hóa Nhật Bản."
     },
-    coverGradient: "linear-gradient(135deg, #1c1917 0%, #44403c 50%, #c29b38 100%)",
+    coverGradient: "linear-gradient(135deg, #1c1917 0%, #234032 50%, #d91c24 100%)",
     svgVisual: "tayo-tea"
   }
 ];
