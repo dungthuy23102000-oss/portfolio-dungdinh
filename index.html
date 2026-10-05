@@ -5410,12 +5410,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   function initTheme() {
     const savedTheme = localStorage.getItem('portfolio-theme');
-    if (savedTheme) {
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      updateThemeIcon(savedTheme);
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+    if (savedTheme === 'light') {
       document.documentElement.setAttribute('data-theme', 'light');
       updateThemeIcon('light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      updateThemeIcon('dark');
     }
   }
 
