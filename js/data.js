@@ -484,9 +484,9 @@ const PROJECTS_DATA = [
     featured: true,
     accentColor: "#D91C24",
     showcaseImage: "assets/taiyo-showcase.jpg",
-    showcaseImages: Array.from({ length: 43 }, (_, i) => "assets/taiyo/page-" + String(i + 1).padStart(2, "0") + ".jpg"),
+    showcaseImages: Array.from({ length: 43 }, (_, i) => "assets/taiyo/page-" + String(i + 1).padStart(2, "0") + ".jpg").filter(p => !p.endsWith("page-02.jpg")),
     pdfGuideline: "assets/Taiyotea-Brand-guideline.pdf",
-    aspectRatio: "1600 / 40936",
+    aspectRatio: "1600 / 39984",
     showcaseBg: "#ffffff",
     summary: "Hệ thống quy chuẩn nhận diện thương hiệu toàn diện (Brand Guideline 43 trang) cho Taiyo tea (太陽のお茶) — thương hiệu trà Nhật Bản cao cấp mang tinh thần Hòa - Kính - Thanh - Tịnh với thông điệp 'Bình thản uống trà, bình thản sống'. Dự án bao gồm đầy đủ 6 phần: Giới thiệu thương hiệu & Triết lý trà đạo; Quy chuẩn Logo kết hợp lá trà - chữ Hán 太陽 - quốc kỳ Nhật & Typeface UTM AKASHI; Bộ nhận diện văn phòng Stationery; Thiết kế bao bì hộp thiếc và hộp túi lọc (Genmaicha, Sencha, Hojicha); Ấn phẩm quảng cáo POSM và Hệ thống quà tặng cao cấp.",
     brief: {
