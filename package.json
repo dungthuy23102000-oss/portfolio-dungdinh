@@ -1,0 +1,19 @@
+{
+  "name": "dinh-dung-portfolio",
+  "version": "1.0.0",
+  "description": "Graphic Design Portfolio - Dinh Dung (Dinh Tien Dung)",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 3000"
+  },
+  "keywords": [
+    "portfolio",
+    "graphic-design",
+    "branding",
+    "packaging",
+    "ui-ux",
+    "supabase"
+  ],
+  "author": "Dinh Dung <dinhtiendung0987@gmail.com>",
+  "license": "MIT"
+}

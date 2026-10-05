@@ -1,0 +1,35 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Heavy Raw Design Archives & Working Directories
+Tổng hợp Portfolio/
+Tong hop Portfolio/
+
+# Unused Root Mockups
+65b4f300-88e9-49a9-8495-5e8ce6c20040.png
+A6-14.jpg
+
+# Duplicate Unreferenced Assets
+assets/chickcoop-showcase.jpg
+assets/chickcoop-showcase.png
+assets/Mấy con gà.mp4
+
+# Deployment & Distribution Archives
+portfolio-production.zip
+*.zip
+*.tar.gz
+
+# Environment & Local Secrets
+.env
+.env.local
+.vercel
+
+*Portfolio*
+
+assets/*con g*.mp4
