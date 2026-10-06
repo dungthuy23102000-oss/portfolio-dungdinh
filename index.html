@@ -992,6 +992,7 @@ main {
   flex-direction: column;
   align-items: center;
   padding-top: 0.25rem;
+  width: 26px;
 }
 
 .timeline-dot {
@@ -1003,6 +1004,8 @@ main {
   box-shadow: 0 0 10px var(--accent-glow);
   z-index: 2;
   transition: transform var(--transition-fast);
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .timeline-item.current .timeline-dot {
@@ -1017,8 +1020,12 @@ main {
 .timeline-line {
   width: 2px;
   flex-grow: 1;
-  background-color: rgba(255, 255, 255, 0.1);
-  margin: 6px 0;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin: 4px 0 0 0;
+}
+
+[data-theme="light"] .timeline-line {
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 .timeline-item.last .timeline-line {
@@ -2250,68 +2257,7 @@ main {
   margin-bottom: 2rem;
 }
 
-/* Timeline Experience */
-.experience-timeline {
-  margin-top: 2.5rem;
-  position: relative;
-  padding-left: 1.75rem;
-}
 
-.experience-timeline::before {
-  content: '';
-  position: absolute;
-  top: 8px;
-  bottom: 8px;
-  left: 4px;
-  width: 2px;
-  background-color: var(--border-color);
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
-
-.timeline-dot {
-  position: absolute;
-  left: -1.75rem;
-  top: 5px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: var(--accent);
-  border: 2px solid var(--bg-primary);
-}
-
-.timeline-period {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--accent);
-  margin-bottom: 0.25rem;
-  display: block;
-}
-
-.timeline-role {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.timeline-company {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-  margin-bottom: 0.4rem;
-}
-
-.timeline-desc {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  line-height: 1.55;
-}
 
 /* ==========================================================================
    Services & Skills Section
