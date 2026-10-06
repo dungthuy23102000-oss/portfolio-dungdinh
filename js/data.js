@@ -132,56 +132,64 @@ const PROJECTS_DATA = [
   {
     id: "viking",
     title: "Viking",
-    tagline: "Bộ Nhận diện Thương hiệu & Hệ sinh thái Ấn phẩm Social Media Web3 Token",
+    tagline: "AI System for Degens & Prediction Markets — Hệ thống Nhận diện Thương hiệu, UI/UX & Social Visual Ecosystem",
     category: "digital",
     categoryLabel: "Social & Nhận diện thương hiệu",
-    client: "Viking Token / Web3 Ecosystem",
+    client: "Viking — AI System for Degens & Prediction Markets",
     role: "Lead Brand & Social Media Designer",
     duration: "5 tuần",
-    services: ["Brand Identity", "Social Media Design", "Token Branding", "Visual Key Visual"],
+    services: ["Brand Identity", "Web3 UI/UX Design", "Trading Bot & Mobile UI", "Social Post & PnL Meme Ecosystem", "Tokenomics & Campaign"],
     featured: true,
     accentColor: "#22C55E",
-    summary: "Thiết kế bộ nhận diện thương hiệu số và hệ sinh thái ấn phẩm social media toàn diện cho Viking — dự án Web3 Token phi tập trung, kết hợp biểu tượng chiến binh dũng mãnh và ánh sáng neon green công nghệ cao nhằm thúc đẩy tương tác cộng đồng và định hình vị thế trên thị trường tiền mã hóa.",
+    showcaseImage: "assets/Slide 9@4x.jpg",
+    aspectRatio: "5303 / 32768",
+    showcaseBg: "#000000",
+    summary: "Hệ sinh thái thiết kế toàn diện cho VIKING — Hệ thống AI thông minh tối ưu hóa giao dịch dành cho giới đầu tư Web3 và thị trường dự đoán (Prediction Markets). Dự án chuẩn hóa và tích hợp trọn vẹn từ Slide 9 Presentation: Nhận diện thương hiệu công nghệ & Mascot chiến binh neon; Giao diện Web App & Mobile App với tính năng giao dịch 1 chạm (ONE click), tối ưu hóa lệnh bằng AI và dữ liệu chuyên sâu; Cấu trúc $VIKING Tokenomics tổng cung 1 tỷ token (60% IPO Presale, 20% Liquidity, 20% Team Reserve); Hệ thống tính năng thưởng Viking Spin to Earn (lên tới 40 SOL mỗi ngày), chương trình Referral Rewards đa cấp (hoa hồng trực tiếp 25% trọn đời, tổng 36% qua 5 tầng với điểm Viking Point); Thông báo ra mắt Viking Trading Bot & Viking Tribe Bot trên Telegram/Web; Chuỗi ấn phẩm truyền thông Viking Beacon ('Trade smarter - Copy faster - Win harder') và ma trận thẻ chia sẻ PnL meme cộng đồng (+2,887.72% / -2,387.72% cùng ưu đãi giảm 10% phí giao dịch).",
     brief: {
-      clientIntro: "Viking là dự án Web3 Token thế hệ mới hướng tới cộng đồng phi tập trung (DeFi & Utility token), nổi bật với tinh thần tiên phong chinh phục và gắn kết holder toàn cầu.",
-      challenge: "Thị trường tiền mã hóa tràn ngập các dự án thiếu chiều sâu thị giác, hình ảnh rời rạc và kém uy tín. Viking cần một biểu tượng chiến binh vừa mang tính biểu tượng văn hóa vừa toát lên tính công nghệ hiện đại, đồng thời đòi hỏi hệ thống ấn phẩm social media cập nhật liên tục 24/7 theo biến động thị trường.",
-      objective: "Xây dựng bộ nhận diện token Viking sắc nét, định hình Key Visual mũ chiến binh neon green nhận diện tức thì; thiết kế thư viện template bài đăng social media (X/Twitter, Telegram) phục vụ các chiến dịch airdrop, cập nhật roadmap, niêm yết sàn (listing) và tương tác cộng đồng."
+      clientIntro: "VIKING là hệ thống AI chuyên sâu được xây dựng cho các nhà giao dịch crypto, Web3 và thị trường dự đoán (Prediction Markets) với thông điệp: 'An AI system built for those who want to stay ahead of the market. VIKING helps users track signals, analyze market sentiment, assess probabilities, and uncover potential opportunities across crypto, Web3, and prediction markets — faster, more systematically, and with less reliance on emotion.' Cam kết cộng đồng: 'Active, loyal, and supportive members will always be appreciated - at any cost.'",
+      challenge: "Thị trường bot giao dịch và tiền mã hóa đòi hỏi tốc độ thực thi tức thì (Near-Instant Execution) và khả năng xử lý mở rộng quy mô. Thách thức lớn là phải số hóa lượng dữ liệu phức tạp (tín hiệu AI, tối ưu hóa lệnh, phân bổ 1 tỷ tokenomics, cơ chế referral 5 cấp và văn hóa meme PnL) thành một ngôn ngữ thị giác sắc bén, cuốn hút, đậm chất cyberpunk và kích thích lan truyền cộng đồng tự nhiên.",
+      objective: "Thiết kế trọn vẹn toàn bộ hệ thống thị giác từ Slide 9: Định hình Key Visual chiến binh neon phát sáng trên nền đen công nghệ; hoàn thiện giao diện người dùng cho Web App và ứng dụng di động; trực quan hóa biểu đồ $VIKING Tokenomics 1 tỷ token; xây dựng chuỗi ấn phẩm quảng bá tính năng Spin to Earn (40 SOL/ngày), Referral Rewards 25%-36%, Viking Trading Bot; thiết kế banner Viking Beacon ('Trade smarter - Copy faster - Win harder') và thư viện thẻ flex PnL meme cộng đồng (TRENCHER/SOL, -2,387.72% / +2,887.72%)."
     },
     concept: {
-      bigIdea: "The Crypto Raider — Tinh thần chiến binh viễn chinh trong kỷ nguyên tài chính phi tập trung.",
-      approach: "Tạo hình mũ giáp chiến binh Viking bằng những đường vát sắc gọn và góc cạnh tối giản, phát sáng neon xanh lá cây (Toxic Green) trên nền đen bóng đêm công nghệ (Stealth Void). Kết hợp cùng typography cơ bắp, đường nét vi mạch số và biểu đồ tokenomics trực quan.",
+      bigIdea: "The AI Raider — Tinh thần chiến binh viễn chinh trong kỷ nguyên giao dịch thuật toán AI và thị trường dự đoán phi tập trung.",
+      approach: "Sử dụng phông nền đen tuyệt đối (Stealth Void Black #000000) làm nền tảng, bừng sáng bởi sắc xanh Toxic Neon (#22C55E / #39FF14) đại diện cho tín hiệu nến xanh tăng trưởng và xung lực trí tuệ nhân tạo. Kết hợp typography góc cạnh tương lai, phong cách pixel art retro ở Viking Beacon, bánh xe số 3D Spin to Earn và linh vật chiến binh Viking giàu cảm xúc trong các thẻ PnL meme cộng đồng.",
       designPrinciples: [
-        { title: "Ruthless Precision", desc: "Đường nét dứt khoát, góc cạnh không khoan nhượng phản ánh sự kiên định của cộng đồng holder." },
-        { title: "Bullish Neon Signal", desc: "Sắc xanh neon green biểu trưng cho nến xanh tăng trưởng và năng lượng bứt phá của dự án." },
-        { title: "Raid-Ready Layouts", desc: "Cấu trúc template xã hội tối ưu hóa thị giác trong 2 giây đầu, tạo hiệu ứng viral mạnh mẽ khi cộng đồng chia sẻ." }
+        { title: "AI-Powered Speed & Precision", desc: "Tối ưu hóa thị giác 1 chạm (ONE click), khớp lệnh gần như tức thì (Near-Instant Execution) và phân tích tín hiệu token chuyên sâu." },
+        { title: "Bullish Neon Signal", desc: "Sắc xanh Toxic Bull Neon phát sáng nổi bật trên nền đen sâu thẳm, kích thích tinh thần chinh phục và thị giác người dùng." },
+        { title: "Degen Culture & Viral Social Mechanics", desc: "Ma trận thẻ PnL meme (+2,887.72% / -2,387.72%) và banner Viking Beacon được thiết kế kích hoạt chia sẻ tự nhiên trên Telegram và X/Twitter." },
+        { title: "Transparent Gamified Economy", desc: "Minh bạch hóa biểu đồ $VIKING Tokenomics (60/20/20) và cấu trúc hoa hồng 5 cấp độ trực quan với hệ thống điểm thưởng Viking Point." }
       ]
     },
     designSystem: {
       colors: [
-        { name: "Obsidian Void", hex: "#0B0D10", role: "Primary Canvas" },
-        { name: "Toxic Bull Green", hex: "#22C55E", role: "Token Glow & Accent" },
-        { name: "Cyber Lime", hex: "#84CC16", role: "Secondary Highlight" },
-        { name: "Graphite Carbon", hex: "#27272A", role: "Data Grid" }
+        { name: "Stealth Void Black", hex: "#000000", role: "Primary Canvas & Deep Background" },
+        { name: "Toxic Bull Neon", hex: "#22C55E", role: "AI Core, Bullish Glow & Signals" },
+        { name: "Cyber Lime", hex: "#84CC16", role: "Button Accent & Highlight" },
+        { name: "Viking Gold", hex: "#EAB308", role: "Token Coins & Reward Accents" },
+        { name: "Bearish Alert Red", hex: "#EF4444", role: "PnL Loss Meme & Stat Badges" },
+        { name: "Carbon Slate", hex: "#18181B", role: "Cards & Data Containers" }
       ],
       typography: {
-        headline: "Orbitron / Space Grotesk — Đanh thép, tương lai và thể hiện sức mạnh Web3",
-        body: "Inter Tight — Tối ưu hóa việc hiển thị biểu đồ giá, địa chỉ ví và chỉ số tokenomics"
+        headline: "Orbitron / Space Grotesk / Bitmap Pixel (Viking Beacon) — Tương lai, đanh thép và đậm chất văn hóa Web3",
+        body: "Inter Tight / Roboto Mono — Tối ưu hóa việc hiển thị dữ liệu giao dịch, tỷ lệ phần trăm hoa hồng và biểu đồ Tokenomics"
       }
     },
     deliverables: [
-      "Bộ nhận diện thương hiệu Web3 Token (Logo Mascot, Token Icon, Typography & Color Guidelines)",
-      "Hệ thống Key Visual Vector Neon phát sáng chất lượng cao phục vụ truyền thông",
-      "Bộ ấn phẩm Social Media đa định dạng: Listing sàn, Roadmap, Tokenomics, Milestones, Meme templates",
-      "Hệ thống đồ họa kênh truyền thông: Banner Telegram, Header X/Twitter, Discord Assets và DexScreener/CoinMarketCap banner"
+      "Bản thiết kế đại cảnh Artboard Slide 9 siêu phân giải (5303 × 32768 px) với tỷ lệ hiển thị tràn viền Edge-to-Edge chuẩn xác",
+      "Hệ thống giao diện Web App & Mobile App: Dashboard giao dịch 1 chạm, AI-Powered Order Optimization, Token Insights và Tribe Bot",
+      "Thiết kế cấu trúc biểu đồ $VIKING Tokenomics tổng cung 1 tỷ token (60% IPO Presale, 20% Liquidity, 20% Team Reserve)",
+      "Bộ ấn phẩm tính năng hệ sinh thái: Viking Spin to Earn (lên tới 40 SOL/ngày), Referral Rewards Program (25% Direct, 36% qua 5 tầng)",
+      "Hệ thống banner truyền thông: Viking Beacon ('Trade smarter - Copy faster - Win harder') và Viking Trading Bot Launching Soon",
+      "Ma trận thẻ PnL meme cộng đồng (TRENCHER/SOL, +2,887.72% / -2,387.72%, ưu đãi giảm 10% phí) với linh vật Viking biến hóa đa dạng"
     ],
     outcome: {
-      summary: "Chiến dịch nhận diện và hệ thống ấn phẩm social media đã giúp Viking xây dựng cộng đồng token trung thành và tạo sức hút bùng nổ khi ra mắt thị trường.",
+      summary: "Hệ thống nhận diện thương hiệu, giao diện số và chuỗi ấn phẩm social media toàn diện đã giúp VIKING xây dựng vị thế tiên phong trong cộng đồng degen Web3 và các thị trường dự đoán.",
       metrics: [
-        { label: "Lượt hiển thị Social", value: "1.5M+" },
-        { label: "Tăng trưởng Holders", value: "+280%" },
-        { label: "Tỷ lệ tương tác", value: "5.2x" }
+        { label: "Lợi nhuận PnL đỉnh cao", value: "+2,887%" },
+        { label: "Hoa hồng Giới thiệu", value: "25% - 36%" },
+        { label: "Tổng cung Tokenomics", value: "1B $VIKING" }
       ],
-      detail: "Hệ thống template social media giúp đội ngũ truyền thông của token phản ứng linh hoạt với các biến động thị trường chỉ trong vài phút, giữ vững nhịp đập thảo luận liên tục của cộng đồng."
+      detail: "Hệ thống template mạng xã hội đồng bộ và thẻ PnL meme giúp dự án lan tỏa tự nhiên trên các hội nhóm Telegram và X/Twitter, kết hợp tốc độ giao dịch tức thì tạo nên sự bùng nổ tương tác của cộng đồng."
     },
     coverGradient: "linear-gradient(135deg, #090c0a 0%, #131c15 50%, #22c55e 100%)",
     svgVisual: "viking"

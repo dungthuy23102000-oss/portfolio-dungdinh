@@ -33,3 +33,13 @@ portfolio-production.zip
 *Portfolio*
 
 assets/*con g*.mp4
+
+# Root raw mockup files & folders
+*.png
+!assets/**/*.png
+!assets/*.png
+assets/chickcoop-showcase.png
+graphic-*/
+laptop-*/
+macbook-*/
+scratch/
