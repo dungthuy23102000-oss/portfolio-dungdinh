@@ -306,14 +306,20 @@
   }
 
 
-  .modal-bottom-nav {
-    flex-direction: column;
+  .modal-bottom-nav,
+  .modal-footer-nav {
+    flex-direction: column !important;
     gap: 1rem;
-    align-items: stretch;
+    align-items: stretch !important;
   }
 
   .modal-nav-action {
     justify-content: center;
+    white-space: normal;
+  }
+
+  #modalBottomNextBtn {
+    margin-left: 0;
   }
 
   .toast-container {

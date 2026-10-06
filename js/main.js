@@ -305,18 +305,18 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
 
           <!-- Bottom Navigation Actions -->
-          <div class="modal-footer-nav" style="width: 100%; max-width: 820px; margin-top: 2.5rem;">
+          <div class="modal-bottom-nav modal-footer-nav" style="width: 100%; max-width: 1000px; padding: 2rem 1.5rem 0; margin-top: 3rem; border-top: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; box-sizing: border-box;">
             <button class="modal-nav-action" id="modalBottomPrevBtn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="19" y1="12" x2="5" y2="12"></line>
-                <polyline points="12 19 5 12 12 5"></polyline>
+                <polyline points="12 19 5 12 12 12"></polyline>
               </svg>
-              <span>Dự án trước: ${prevProject.title}</span>
+              <span>${currentLang === 'vi' ? 'Dự án trước: ' + prevProject.title : 'Previous: ' + prevProject.title}</span>
             </button>
             
-            <button class="modal-nav-action" id="modalBottomNextBtn">
-              <span>Dự án kế tiếp: ${nextProject.title}</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <button class="modal-nav-action" id="modalBottomNextBtn" style="margin-left: auto;">
+              <span>${currentLang === 'vi' ? 'Dự án kế tiếp: ' + nextProject.title : 'Next: ' + nextProject.title}</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
@@ -520,16 +520,16 @@ document.addEventListener('DOMContentLoaded', () => {
         <!-- Bottom Navigation Controls -->
         <div class="modal-bottom-nav">
           <button class="modal-nav-action" id="modalBottomPrevBtn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="19" y1="12" x2="5" y2="12"></line>
-              <polyline points="12 19 5 12 12 5"></polyline>
+              <polyline points="12 19 5 12 12 12"></polyline>
             </svg>
-            <span>Dự án trước: ${prevProject.title}</span>
+            <span>${currentLang === 'vi' ? 'Dự án trước: ' + prevProject.title : 'Previous: ' + prevProject.title}</span>
           </button>
           
-          <button class="modal-nav-action" id="modalBottomNextBtn">
-            <span>Dự án kế tiếp: ${nextProject.title}</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <button class="modal-nav-action" id="modalBottomNextBtn" style="margin-left: auto;">
+            <span>${currentLang === 'vi' ? 'Dự án kế tiếp: ' + nextProject.title : 'Next: ' + nextProject.title}</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
