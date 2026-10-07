@@ -1785,6 +1785,77 @@ main {
   display: block;
 }
 
+/* TON Journal Looping Marquee Title Bars */
+.ton-marquee-bar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  background: linear-gradient(90deg, #073CA5 0%, #01ECF6 100%);
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.ton-marquee-track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  align-items: center;
+  will-change: transform;
+  animation: ton-marquee-scroll linear infinite;
+}
+
+.ton-marquee-group {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.ton-marquee-item {
+  display: inline-flex;
+  height: 100%;
+  align-items: center;
+  white-space: nowrap;
+  gap: clamp(6px, 1.1vw, 22px);
+  margin-right: clamp(18px, 3.2vw, 64px);
+}
+
+.ton-marquee-icon {
+  height: 62%;
+  width: auto;
+  aspect-ratio: 476 / 438;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+.ton-marquee-text {
+  font-family: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: clamp(8px, 1.35vw, 26px);
+  line-height: 1;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes ton-marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
 /* Modal Sticky Top Bar */
 .modal-top-bar {
   position: sticky;
@@ -4341,6 +4412,35 @@ const PROJECTS_DATA = [
     services: ["Brand Identity", "Social Media Design", "3D Key Visual", "Content Strategy"],
     featured: true,
     accentColor: "#0098EA",
+    showcaseImage: "assets/the-ton-journal-showcase.jpg",
+    aspectRatio: "1920 / 6120",
+    showcaseBg: "#ffffff",
+    showcaseMarquees: [
+      {
+        id: "marquee-about-ton",
+        top: "0%",
+        height: "1.552288%",
+        text: "ABOUT TON",
+        icon: "assets/ton-diamond.png",
+        speed: "22s"
+      },
+      {
+        id: "marquee-brand-identity",
+        top: "14.133987%",
+        height: "1.552288%",
+        text: "BRAND IDENTITY",
+        icon: "assets/ton-diamond.png",
+        speed: "26s"
+      },
+      {
+        id: "marquee-social-post",
+        top: "52.679739%",
+        height: "1.552288%",
+        text: "SOCIAL POST",
+        icon: "assets/ton-diamond.png",
+        speed: "22s"
+      }
+    ],
     summary: "Xây dựng hệ thống nhận diện thương hiệu số và định hướng visual toàn diện cho các ấn phẩm truyền thông mạng xã hội của The Ton Journal, kết hợp hình tượng pha lê 3D với ngôn ngữ đồ họa Web3 hiện đại.",
     brief: {
       clientIntro: "The Ton Journal là ấn phẩm thông tin và kênh truyền thông uy tín trong hệ sinh thái TON (The Open Network), chuyên phân tích chuyên sâu và cập nhật nhịp đập công nghệ blockchain cho cộng đồng toàn cầu.",
@@ -6413,6 +6513,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 <video src="${encodeURI(project.showcaseVideo.src)}" autoplay loop muted playsinline webkit-playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
               </div>
             ` : ''}
+            ${(project.showcaseMarquees && project.showcaseMarquees.length > 0) ? 
+              project.showcaseMarquees.map((m) => `
+                <div class="ton-marquee-bar" style="top: ${m.top}; height: ${m.height};">
+                  <div class="ton-marquee-track" style="animation-duration: ${m.speed || '24s'};">
+                    <div class="ton-marquee-group">
+                      ${Array(12).fill(0).map(() => `
+                        <span class="ton-marquee-item">
+                          <img src="${encodeURI(m.icon || 'assets/ton-diamond.png')}" alt="TON Diamond" class="ton-marquee-icon" loading="eager">
+                          <span class="ton-marquee-text">${m.text}</span>
+                        </span>
+                      `).join('')}
+                    </div>
+                    <div class="ton-marquee-group" aria-hidden="true">
+                      ${Array(12).fill(0).map(() => `
+                        <span class="ton-marquee-item">
+                          <img src="${encodeURI(m.icon || 'assets/ton-diamond.png')}" alt="" class="ton-marquee-icon" loading="eager">
+                          <span class="ton-marquee-text">${m.text}</span>
+                        </span>
+                      `).join('')}
+                    </div>
+                  </div>
+                </div>
+              `).join('')
+              : ''
+            }
           </div>
 
           <!-- Bottom Navigation Actions -->

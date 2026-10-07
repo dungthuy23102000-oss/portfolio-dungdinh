@@ -38,6 +38,10 @@ assets/*con g*.mp4
 *.png
 !assets/**/*.png
 !assets/*.png
+*.svg
+!assets/**/*.svg
+!assets/*.svg
+Slide 13.svg
 assets/chickcoop-showcase.png
 graphic-*/
 laptop-*/

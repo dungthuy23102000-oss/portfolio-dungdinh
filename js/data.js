@@ -84,6 +84,35 @@ const PROJECTS_DATA = [
     services: ["Brand Identity", "Social Media Design", "3D Key Visual", "Content Strategy"],
     featured: true,
     accentColor: "#0098EA",
+    showcaseImage: "assets/the-ton-journal-showcase.jpg",
+    aspectRatio: "1920 / 6120",
+    showcaseBg: "#ffffff",
+    showcaseMarquees: [
+      {
+        id: "marquee-about-ton",
+        top: "0%",
+        height: "1.552288%",
+        text: "ABOUT TON",
+        icon: "assets/ton-diamond.png",
+        speed: "22s"
+      },
+      {
+        id: "marquee-brand-identity",
+        top: "14.133987%",
+        height: "1.552288%",
+        text: "BRAND IDENTITY",
+        icon: "assets/ton-diamond.png",
+        speed: "26s"
+      },
+      {
+        id: "marquee-social-post",
+        top: "52.679739%",
+        height: "1.552288%",
+        text: "SOCIAL POST",
+        icon: "assets/ton-diamond.png",
+        speed: "22s"
+      }
+    ],
     summary: "Xây dựng hệ thống nhận diện thương hiệu số và định hướng visual toàn diện cho các ấn phẩm truyền thông mạng xã hội của The Ton Journal, kết hợp hình tượng pha lê 3D với ngôn ngữ đồ họa Web3 hiện đại.",
     brief: {
       clientIntro: "The Ton Journal là ấn phẩm thông tin và kênh truyền thông uy tín trong hệ sinh thái TON (The Open Network), chuyên phân tích chuyên sâu và cập nhật nhịp đập công nghệ blockchain cho cộng đồng toàn cầu.",

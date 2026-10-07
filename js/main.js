@@ -295,13 +295,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <!-- Full Project Presentation Showcase (Edge-to-Edge) -->
         <div class="modal-content-inner modal-showcase-mode" style="padding: 0 0 3.5rem 0; width: 100%; display: flex; flex-direction: column; align-items: center;">
-          <div class="project-showcase-full" style="width: 100%; margin: 0; padding: 0; background: #faf6ee; position: relative;">
-            <img src="${safeSrc}" alt="${project.title} - Full Presentation" style="width: 100%; height: auto; display: block; margin: 0; padding: 0; aspect-ratio: 5303 / 32768;" loading="eager">
+          <div class="project-showcase-full" style="width: 100%; margin: 0; padding: 0; background: ${project.showcaseBg || 'transparent'}; position: relative;">
+            <img src="${safeSrc}" alt="${project.title} - Full Presentation" style="width: 100%; height: auto; display: block; margin: 0; padding: 0; ${project.aspectRatio ? `aspect-ratio: ${project.aspectRatio};` : 'aspect-ratio: 5303 / 32768;'}" loading="eager">
             ${project.showcaseVideo ? `
               <div class="showcase-video-overlay" style="position: absolute; top: ${project.showcaseVideo.top}; left: ${project.showcaseVideo.left}; width: ${project.showcaseVideo.width}; height: ${project.showcaseVideo.height}; border-radius: ${project.showcaseVideo.borderRadius}; overflow: hidden; background-color: #1a0226;">
                 <video src="${encodeURI(project.showcaseVideo.src)}" autoplay loop muted playsinline webkit-playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
               </div>
             ` : ''}
+            ${(project.showcaseMarquees && project.showcaseMarquees.length > 0) ? 
+              project.showcaseMarquees.map((m) => `
+                <div class="ton-marquee-bar" style="top: ${m.top}; height: ${m.height};">
+                  <div class="ton-marquee-track" style="animation-duration: ${m.speed || '24s'};">
+                    <div class="ton-marquee-group">
+                      ${Array(12).fill(0).map(() => `
+                        <span class="ton-marquee-item">
+                          <img src="${encodeURI(m.icon || 'assets/ton-diamond.png')}" alt="TON Diamond" class="ton-marquee-icon" loading="eager">
+                          <span class="ton-marquee-text">${m.text}</span>
+                        </span>
+                      `).join('')}
+                    </div>
+                    <div class="ton-marquee-group" aria-hidden="true">
+                      ${Array(12).fill(0).map(() => `
+                        <span class="ton-marquee-item">
+                          <img src="${encodeURI(m.icon || 'assets/ton-diamond.png')}" alt="" class="ton-marquee-icon" loading="eager">
+                          <span class="ton-marquee-text">${m.text}</span>
+                        </span>
+                      `).join('')}
+                    </div>
+                  </div>
+                </div>
+              `).join('')
+              : ''
+            }
           </div>
 
           <!-- Bottom Navigation Actions -->
