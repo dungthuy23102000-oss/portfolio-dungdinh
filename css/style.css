@@ -1728,7 +1728,7 @@ main {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: #faf6ee;
+  container-type: inline-size;
 }
 
 .project-showcase-full img {
@@ -1791,8 +1791,10 @@ main {
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  gap: clamp(20px, 2.9vw, 58px);
-  margin-right: clamp(20px, 2.9vw, 58px);
+  gap: clamp(14px, 2.92vw, 56px);
+  gap: clamp(14px, 2.92cqi, 56px);
+  margin-right: clamp(14px, 2.92vw, 56px);
+  margin-right: clamp(14px, 2.92cqi, 56px);
 }
 
 .ton-marquee-icon {
@@ -1810,6 +1812,7 @@ main {
   font-family: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   font-weight: 700;
   font-size: clamp(10px, 1.25vw, 24px);
+  font-size: clamp(10px, 1.25cqi, 24px);
   line-height: 1;
   color: #FFFFFF;
   text-transform: uppercase;

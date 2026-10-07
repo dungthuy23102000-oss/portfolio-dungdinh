@@ -87,41 +87,68 @@ const PROJECTS_DATA = [
     showcaseImage: "assets/the-ton-journal-showcase.jpg",
     aspectRatio: "1920 / 6120",
     showcaseBg: "#ffffff",
-    summary: "Xây dựng hệ thống nhận diện thương hiệu số và định hướng visual toàn diện cho các ấn phẩm truyền thông mạng xã hội của The Ton Journal, kết hợp hình tượng pha lê 3D với ngôn ngữ đồ họa Web3 hiện đại.",
+    showcaseMarquees: [
+      {
+        id: "marquee-about-ton",
+        top: "0%",
+        height: "1.552288%",
+        text: "ABOUT TON",
+        icon: "assets/ton-diamond-v2.png",
+        speed: "25s"
+      },
+      {
+        id: "marquee-brand-identity",
+        top: "14.133987%",
+        height: "1.552288%",
+        text: "BRAND IDENTITY",
+        icon: "assets/ton-diamond-v2.png",
+        speed: "28s"
+      },
+      {
+        id: "marquee-social-post",
+        top: "52.679739%",
+        height: "1.552288%",
+        text: "SOCIAL POST",
+        icon: "assets/ton-diamond-v2.png",
+        speed: "25s"
+      }
+    ],
+    summary: "Xây dựng hệ thống nhận diện thương hiệu số và định hướng visual toàn diện cho The Ton Journal — nền tảng truyền thông chuyên sâu cung cấp tin tức, phân tích và câu chuyện thị trường trong hệ sinh thái TON Ecosystem. Dự án tích hợp trọn vẹn từ Slide 13 Presentation: Key Visual kim cương pha lê 3D phát sáng, bảng màu chuẩn mực (Deep Navy, Royal Blue, Electric Sky, Vibrant Cyan, Crystal Ice), định chuẩn typography hiện đại cùng thư viện template Social Post đa định dạng.",
     brief: {
-      clientIntro: "The Ton Journal là ấn phẩm thông tin và kênh truyền thông uy tín trong hệ sinh thái TON (The Open Network), chuyên phân tích chuyên sâu và cập nhật nhịp đập công nghệ blockchain cho cộng đồng toàn cầu.",
-      challenge: "Lĩnh vực Web3 có tốc độ dòng chảy tin tức cực nhanh; các ấn phẩm thường bị khô khan hoặc lặp lại khuôn mẫu tech chung chung. Thách thức là tạo ra bản sắc thị giác độc bản, cao cấp, vừa giữ vững tính minh bạch vừa kích thích thị giác mạnh mẽ trên newsfeed mạng xã hội.",
-      objective: "Định hình visual identity nhất quán, phát triển hệ thống Key Visual 3D pha lê đại diện cho tính minh bạch và công nghệ, thiết kế template đa định dạng (X/Twitter, Telegram, Facebook) tối ưu tốc độ sản xuất nội dung hàng ngày."
+      clientIntro: "The TON Journal is a media platform dedicated to covering and curating information across the TON Ecosystem, providing the community with timely, accessible, and valuable insights into its ongoing development. Our content focuses on key areas such as TON Blockchain, the Telegram ecosystem, DeFi, GameFi, Mini Apps, emerging projects, incentive programs, market updates, and the latest trends shaping the TON ecosystem. Beyond reporting news, The TON Journal aims to become an information hub for the TON community — a place where users can stay informed about important developments, discover promising projects, and gain a deeper understanding of the growth and evolution of the TON Ecosystem.",
+      challenge: "Lĩnh vực Web3 và hệ sinh thái TON có tốc độ dòng chảy tin tức liên tục và cực nhanh; các ấn phẩm thường bị khô khan hoặc lặp lại khuôn mẫu tech chung chung. Thách thức là xây dựng bản sắc thị giác độc bản, cao cấp, vừa phản ánh đúng tinh thần minh bạch, công nghệ cao của The Open Network, vừa tạo hiệu ứng thị giác dừng mắt (feed-stopping) mạnh mẽ trên Telegram và X/Twitter.",
+      objective: "Định hình visual identity nhất quán theo tuyên ngôn 'News, Insights & Stories from the TON Ecosystem'; phát triển hệ thống Key Visual 3D pha lê kim cương đại diện cho tính minh bạch và công nghệ phi tập trung; chuẩn hóa Color Palette 5 cấp độ và hệ thống typography; thiết kế template Social Post đa nền tảng tối ưu tốc độ sản xuất nội dung hàng ngày."
     },
     concept: {
-      bigIdea: "Crystalline Clarity — Sự tinh khiết, minh bạch và chiều sâu của tri thức công nghệ.",
-      approach: "Sử dụng khối pha lê kim cương phát sáng lơ lửng trên mặt nước tĩnh lặng làm Key Visual cốt lõi, kết hợp hệ thống lưới vi mô (micro-grid), typography chuẩn mực và bảng màu cyan điện tử tạo cảm giác tương lai và uy tín.",
+      bigIdea: "Crystalline Clarity — Sự tinh khiết, minh bạch và chiều sâu của tri thức công nghệ Web3.",
+      approach: "Sử dụng khối pha lê kim cương xanh 3D phát sáng lơ lửng trên mặt sóng biển làm Key Visual cốt lõi, kết hợp hệ thống dải màu chuyển tiếp (linear gradient #073CA5 đến #01ECF6), typography Space Grotesk chuẩn mực và bảng màu cyan điện tử tạo cảm giác tương lai, uy tín và chuyên nghiệp.",
       designPrinciples: [
-        { title: "Crystalline Precision", desc: "Đường nét chuẩn xác, cấu trúc đa diện biểu trưng cho góc nhìn đa chiều của báo chí công nghệ." },
-        { title: "Feed-Stopping Contrast", desc: "Độ tương phản cao giữa màu xanh đại dương sâu thẳm và ánh sáng pha lê cyan nổi bật ngay trong 2 giây đầu lướt feed." },
+        { title: "Crystalline Precision", desc: "Đường nét chuẩn xác, cấu trúc đa diện biểu trưng cho góc nhìn sâu sắc và đa chiều của báo chí công nghệ." },
+        { title: "Feed-Stopping Contrast", desc: "Độ tương phản cao giữa sắc xanh đại dương thẳm sâu (#00103C) và ánh sáng cyan (#00FFFF) rực rỡ nổi bật ngay trong 2 giây đầu lướt feed." },
         { title: "Modular Scalability", desc: "Hệ thống khung layout linh hoạt cho phép đội ngũ biên tập tạo ấn phẩm nhanh chóng mà vẫn giữ trọn vẹn bản sắc thương hiệu." }
       ]
     },
     designSystem: {
       colors: [
-        { name: "Abyssal Navy", hex: "#06152B", role: "Primary Deep" },
-        { name: "Electric Cyan", hex: "#0098EA", role: "TON Signature" },
-        { name: "Pure Crystal", hex: "#E0F2FE", role: "Highlight Light" },
-        { name: "Slate Grid", hex: "#64748B", role: "Technical Metric" }
+        { name: "Deep Ton Navy", hex: "#00103C", role: "Primary Background (RGB: 0, 16, 60)" },
+        { name: "TON Royal Blue", hex: "#0071EC", role: "Brand Signature (RGB: 0, 113, 230)" },
+        { name: "Electric Sky Blue", hex: "#0191EE", role: "Gradient Midtone (RGB: 1, 145, 238)" },
+        { name: "Vibrant Cyan", hex: "#00FFFF", role: "Accent Highlight (RGB: 0, 255, 255)" },
+        { name: "Crystal Ice", hex: "#C8E1FF", role: "Light Card Tint (RGB: 200, 225, 255)" }
       ],
       typography: {
-        headline: "Plus Jakarta Sans / Space Grotesk — Hiện đại, sắc nét và mang hơi thở công nghệ",
+        headline: "Space Grotesk / Plus Jakarta Sans — Hiện đại, sắc nét và mang hơi thở công nghệ",
         body: "Inter Tight — Rõ ràng, tối ưu cho các bảng tin tức và bài phân tích social"
       }
     },
     deliverables: [
-      "Bộ nhận diện thương hiệu số hoàn chỉnh (Logo, Typography, Color System, Grid Guidelines)",
-      "Hệ thống 3D Key Visual & Render assets độc quyền chất lượng cao",
-      "50+ Template thiết kế social media đa nền tảng (X/Twitter, Telegram, Facebook)",
-      "Brand Guidelines chi tiết phục vụ vận hành sản xuất nội dung số tốc độ cao"
+      "Bộ nhận diện thương hiệu số hoàn chỉnh (Logo, Typography, 5-Tone Color Palette, Brand Rules)",
+      "Hệ thống 3D Crystal Diamond Key Visual & Render assets độc quyền chất lượng cao",
+      "Thư viện Template Social Post đa nền tảng (X/Twitter, Telegram, News Cards)",
+      "Slide 13 Brand Presentation toàn diện với các dải phân cách tiêu đề động lặp vô tận"
     ],
     outcome: {
-      summary: "Bộ nhận diện và chuỗi ấn phẩm social media đã giúp The Ton Journal tăng trưởng vượt bậc về nhận thức thương hiệu và gắn kết cộng đồng Web3 toàn cầu.",
+      summary: "Bộ nhận diện và chuỗi ấn phẩm social media đã giúp The Ton Journal định vị vững chắc vai trò cổng thông tin hàng đầu của cộng đồng TON toàn cầu.",
       metrics: [
         { label: "Lượt tiếp cận Social", value: "650K+" },
         { label: "Tăng trưởng Followers", value: "+210%" },
@@ -129,7 +156,7 @@ const PROJECTS_DATA = [
       ],
       detail: "Hệ thống template mạng xã hội đồng bộ giúp rút ngắn 60% thời gian thiết kế mỗi ngày, nâng cao độ tin cậy và thẩm mỹ trong mắt các đối tác quỹ đầu tư và dự án Web3 lớn."
     },
-    coverGradient: "linear-gradient(135deg, #06152b 0%, #0c2d54 50%, #0098ea 100%)",
+    coverGradient: "linear-gradient(135deg, #00103c 0%, #0071ec 50%, #00ffff 100%)",
     svgVisual: "the-ton-journal"
   },
   {

@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ${(project.showcaseMarquees && project.showcaseMarquees.length > 0) ? 
               project.showcaseMarquees.map((m) => `
                 <div class="ton-marquee-bar" style="top: ${m.top}; height: ${m.height};">
-                  <div class="ton-marquee-track" style="animation-duration: ${m.speed || '24s'};">
+                  <div class="ton-marquee-track" style="animation-duration: ${m.speed || '25s'};">
                     <div class="ton-marquee-group">
                       ${Array(12).fill(0).map(() => `
                         <span class="ton-marquee-item">
