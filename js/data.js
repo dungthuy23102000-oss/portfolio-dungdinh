@@ -93,7 +93,7 @@ const PROJECTS_DATA = [
         top: "0%",
         height: "1.552288%",
         text: "ABOUT TON",
-        icon: "assets/ton-diamond.png",
+        icon: "assets/ton-diamond-v2.png",
         speed: "22s"
       },
       {
@@ -101,7 +101,7 @@ const PROJECTS_DATA = [
         top: "14.133987%",
         height: "1.552288%",
         text: "BRAND IDENTITY",
-        icon: "assets/ton-diamond.png",
+        icon: "assets/ton-diamond-v2.png",
         speed: "26s"
       },
       {
@@ -109,7 +109,7 @@ const PROJECTS_DATA = [
         top: "52.679739%",
         height: "1.552288%",
         text: "SOCIAL POST",
-        icon: "assets/ton-diamond.png",
+        icon: "assets/ton-diamond-v2.png",
         speed: "22s"
       }
     ],
