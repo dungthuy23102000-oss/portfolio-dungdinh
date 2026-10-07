@@ -98,7 +98,7 @@ const PROJECTS_DATA = [
       },
       {
         id: "marquee-brand-identity",
-        top: "14.133987%",
+        top: "14.215686%",
         height: "1.552288%",
         text: "BRAND IDENTITY",
         icon: "assets/ton-diamond-v2.png",
@@ -106,14 +106,14 @@ const PROJECTS_DATA = [
       },
       {
         id: "marquee-social-post",
-        top: "52.679739%",
+        top: "52.826797%",
         height: "1.552288%",
         text: "SOCIAL POST",
         icon: "assets/ton-diamond-v2.png",
         speed: "25s"
       }
     ],
-    summary: "Xây dựng hệ thống nhận diện thương hiệu số và định hướng visual toàn diện cho The Ton Journal — nền tảng truyền thông chuyên sâu cung cấp tin tức, phân tích và câu chuyện thị trường trong hệ sinh thái TON Ecosystem. Dự án tích hợp trọn vẹn từ Slide 13 Presentation: Key Visual kim cương pha lê 3D phát sáng, bảng màu chuẩn mực (Deep Navy, Royal Blue, Electric Sky, Vibrant Cyan, Crystal Ice), định chuẩn typography hiện đại cùng thư viện template Social Post đa định dạng.",
+    summary: "Xây dựng hệ thống nhận diện thương hiệu số và định hướng visual toàn diện cho The Ton Journal — nền tảng truyền thông chuyên sâu cung cấp tin tức, phân tích và câu chuyện thị trường trong hệ sinh thái TON Ecosystem. Dự án tích hợp trọn vẹn từ Slide 14 Presentation: Key Visual kim cương pha lê 3D phát sáng, bảng màu chuẩn mực (Deep Navy, Royal Blue, Electric Sky, Vibrant Cyan, Crystal Ice), định chuẩn typography hiện đại cùng thư viện template Social Post đa định dạng.",
     brief: {
       clientIntro: "The TON Journal is a media platform dedicated to covering and curating information across the TON Ecosystem, providing the community with timely, accessible, and valuable insights into its ongoing development. Our content focuses on key areas such as TON Blockchain, the Telegram ecosystem, DeFi, GameFi, Mini Apps, emerging projects, incentive programs, market updates, and the latest trends shaping the TON ecosystem. Beyond reporting news, The TON Journal aims to become an information hub for the TON community — a place where users can stay informed about important developments, discover promising projects, and gain a deeper understanding of the growth and evolution of the TON Ecosystem.",
       challenge: "Lĩnh vực Web3 và hệ sinh thái TON có tốc độ dòng chảy tin tức liên tục và cực nhanh; các ấn phẩm thường bị khô khan hoặc lặp lại khuôn mẫu tech chung chung. Thách thức là xây dựng bản sắc thị giác độc bản, cao cấp, vừa phản ánh đúng tinh thần minh bạch, công nghệ cao của The Open Network, vừa tạo hiệu ứng thị giác dừng mắt (feed-stopping) mạnh mẽ trên Telegram và X/Twitter.",
@@ -145,7 +145,7 @@ const PROJECTS_DATA = [
       "Bộ nhận diện thương hiệu số hoàn chỉnh (Logo, Typography, 5-Tone Color Palette, Brand Rules)",
       "Hệ thống 3D Crystal Diamond Key Visual & Render assets độc quyền chất lượng cao",
       "Thư viện Template Social Post đa nền tảng (X/Twitter, Telegram, News Cards)",
-      "Slide 13 Brand Presentation toàn diện với các dải phân cách tiêu đề động lặp vô tận"
+      "Slide 14 Brand Presentation toàn diện với các dải phân cách tiêu đề động lặp vô tận"
     ],
     outcome: {
       summary: "Bộ nhận diện và chuỗi ấn phẩm social media đã giúp The Ton Journal định vị vững chắc vai trò cổng thông tin hàng đầu của cộng đồng TON toàn cầu.",
