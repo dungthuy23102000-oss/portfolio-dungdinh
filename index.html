@@ -1824,29 +1824,39 @@ main {
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  gap: clamp(14px, 3.31cqi, 70px);
-  margin-right: clamp(14px, 3.31cqi, 70px);
-}
-
-.ton-marquee-icon {
-  height: 47.5%;
-  width: auto;
-  aspect-ratio: 498 / 452;
-  object-fit: contain;
-  display: block;
-  flex-shrink: 0;
-  pointer-events: none;
-  filter: drop-shadow(0 2px 5px rgba(0, 30, 100, 0.3));
-}
-
-.ton-marquee-text {
   font-family: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   font-weight: 700;
-  font-size: clamp(10px, 1.18cqi, 26px);
+  font-size: clamp(11px, 1.15cqi, 22px);
   line-height: 1;
   color: #FFFFFF;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  gap: clamp(10px, 1.5cqi, 28px);
+  margin-right: clamp(10px, 1.5cqi, 28px);
+}
+
+.ton-marquee-icon {
+  height: 1.05em !important;
+  max-height: 24px !important;
+  width: auto !important;
+  max-width: 28px !important;
+  aspect-ratio: 96 / 87;
+  object-fit: contain;
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 20, 80, 0.4));
+}
+
+.ton-marquee-text {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: 1;
+  color: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
   white-space: nowrap;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   display: inline-flex;
@@ -6537,7 +6547,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="ton-marquee-group">
                       ${Array(12).fill(0).map(() => `
                         <span class="ton-marquee-item">
-                          <img src="${encodeURI(m.icon || 'assets/ton-diamond-v2.png')}" alt="" class="ton-marquee-icon" data-pin-no-hover="true" data-pin-nopin="true" loading="eager">
+                          <img src="${encodeURI(m.icon || 'assets/ton-diamond-v2.png')}" alt="" class="ton-marquee-icon" width="22" height="20" data-pin-no-hover="true" data-pin-nopin="true" loading="eager">
                           <span class="ton-marquee-text">${m.text}</span>
                         </span>
                       `).join('')}
@@ -6545,7 +6555,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="ton-marquee-group" aria-hidden="true">
                       ${Array(12).fill(0).map(() => `
                         <span class="ton-marquee-item">
-                          <img src="${encodeURI(m.icon || 'assets/ton-diamond-v2.png')}" alt="" class="ton-marquee-icon" data-pin-no-hover="true" data-pin-nopin="true" loading="eager">
+                          <img src="${encodeURI(m.icon || 'assets/ton-diamond-v2.png')}" alt="" class="ton-marquee-icon" width="22" height="20" data-pin-no-hover="true" data-pin-nopin="true" loading="eager">
                           <span class="ton-marquee-text">${m.text}</span>
                         </span>
                       `).join('')}

@@ -309,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="ton-marquee-group">
                       ${Array(12).fill(0).map(() => `
                         <span class="ton-marquee-item">
-                          <img src="${encodeURI(m.icon || 'assets/ton-diamond-v2.png')}" alt="" class="ton-marquee-icon" data-pin-no-hover="true" data-pin-nopin="true" loading="eager">
+                          <img src="${encodeURI(m.icon || 'assets/ton-diamond-v2.png')}" alt="" class="ton-marquee-icon" width="22" height="20" data-pin-no-hover="true" data-pin-nopin="true" loading="eager">
                           <span class="ton-marquee-text">${m.text}</span>
                         </span>
                       `).join('')}
@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="ton-marquee-group" aria-hidden="true">
                       ${Array(12).fill(0).map(() => `
                         <span class="ton-marquee-item">
-                          <img src="${encodeURI(m.icon || 'assets/ton-diamond-v2.png')}" alt="" class="ton-marquee-icon" data-pin-no-hover="true" data-pin-nopin="true" loading="eager">
+                          <img src="${encodeURI(m.icon || 'assets/ton-diamond-v2.png')}" alt="" class="ton-marquee-icon" width="22" height="20" data-pin-no-hover="true" data-pin-nopin="true" loading="eager">
                           <span class="ton-marquee-text">${m.text}</span>
                         </span>
                       `).join('')}
