@@ -1791,10 +1791,10 @@ main {
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  gap: clamp(14px, 2.92vw, 56px);
-  gap: clamp(14px, 2.92cqi, 56px);
-  margin-right: clamp(14px, 2.92vw, 56px);
-  margin-right: clamp(14px, 2.92cqi, 56px);
+  gap: clamp(14px, 2.97vw, 57px);
+  gap: clamp(14px, 2.97cqi, 57px);
+  margin-right: clamp(14px, 2.97vw, 57px);
+  margin-right: clamp(14px, 2.97cqi, 57px);
 }
 
 .ton-marquee-icon {
@@ -1805,20 +1805,18 @@ main {
   display: block;
   flex-shrink: 0;
   pointer-events: none;
-  filter: drop-shadow(0 2px 5px rgba(0, 30, 100, 0.3));
 }
 
 .ton-marquee-text {
-  font-family: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  font-weight: 800;
   font-size: clamp(10px, 1.25vw, 24px);
   font-size: clamp(10px, 1.25cqi, 24px);
   line-height: 1;
   color: #FFFFFF;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.045em;
   white-space: nowrap;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   display: inline-flex;
   align-items: center;
 }
