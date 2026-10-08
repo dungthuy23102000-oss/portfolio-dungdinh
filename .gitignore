@@ -42,7 +42,6 @@ assets/*con g*.mp4
 !assets/**/*.svg
 !assets/*.svg
 Slide 13.svg
-Slide 13.pdf
 Slide 14.svg
 Slide 14.pdf
 *.ai
