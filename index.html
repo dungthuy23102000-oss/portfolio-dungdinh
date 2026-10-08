@@ -1793,7 +1793,7 @@ main {
   width: 100%;
   overflow: hidden;
   pointer-events: none;
-  background: linear-gradient(90deg, #073CA5 0%, #01ECF6 100%);
+  background: linear-gradient(90deg, #0746A9 0%, #056DBB 25%, #0494CD 50%, #03BBDF 75%, #01E2F1 100%);
   z-index: 8;
   display: flex;
   align-items: center;
@@ -1806,6 +1806,7 @@ main {
   width: max-content;
   height: 100%;
   align-items: center;
+  background: transparent;
   will-change: transform;
   animation: ton-marquee-scroll linear infinite;
 }
@@ -1823,32 +1824,31 @@ main {
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  gap: clamp(14px, 2.97vw, 57px);
-  gap: clamp(14px, 2.97cqi, 57px);
-  margin-right: clamp(14px, 2.97vw, 57px);
-  margin-right: clamp(14px, 2.97cqi, 57px);
+  gap: clamp(14px, 3.31cqi, 70px);
+  margin-right: clamp(14px, 3.31cqi, 70px);
 }
 
 .ton-marquee-icon {
-  height: 62.1%;
+  height: 47.5%;
   width: auto;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 498 / 452;
   object-fit: contain;
   display: block;
   flex-shrink: 0;
   pointer-events: none;
+  filter: drop-shadow(0 2px 5px rgba(0, 30, 100, 0.3));
 }
 
 .ton-marquee-text {
-  font-family: 'Plus Jakarta Sans', 'Space Grotesk', system-ui, -apple-system, sans-serif;
-  font-weight: 800;
-  font-size: clamp(10px, 1.25vw, 24px);
-  font-size: clamp(10px, 1.25cqi, 24px);
+  font-family: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: clamp(10px, 1.18cqi, 26px);
   line-height: 1;
   color: #FFFFFF;
   text-transform: uppercase;
-  letter-spacing: 0.045em;
+  letter-spacing: 0.04em;
   white-space: nowrap;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   display: inline-flex;
   align-items: center;
 }
@@ -4428,7 +4428,7 @@ const PROJECTS_DATA = [
         height: "1.552288%",
         text: "ABOUT TON",
         icon: "assets/ton-diamond-v2.png",
-        speed: "24s"
+        speed: "25s"
       },
       {
         id: "marquee-brand-identity",
@@ -4444,7 +4444,7 @@ const PROJECTS_DATA = [
         height: "1.552288%",
         text: "SOCIAL POST",
         icon: "assets/ton-diamond-v2.png",
-        speed: "26s"
+        speed: "25s"
       }
     ],
     summary: "Hệ sinh thái thiết kế toàn diện cho THE TON JOURNAL — Cổng thông tin và truyền thông chuyên sâu thuộc hệ sinh thái TON (The Open Network). Dự án chuẩn hóa và tích hợp trọn vẹn 100% nội dung từ Slide 14 Presentation: Định vị sứ mệnh nền tảng ('News, Insights & Stories from the TON Ecosystem'); Hệ thống Logo nhận diện với biểu tượng Kim cương pha lê 3D đa diện cùng lưới căn chỉnh tỷ lệ đồ họa; Bảng màu chính thức 5 cấp độ chuẩn xác từng mã HEX và RGB (Deep Navy #00103C, TON Royal Blue #0071EC, Electric Sky Blue #0191EE, Vibrant Cyan #00FFFF, Crystal Ice #C8E1FF); Bộ Key Visual 3D khối kim cương phát sáng lơ lửng trên mặt biển cùng các đồng xu TON độc quyền; Chuỗi ấn phẩm Social Post đa dạng cho các sự kiện sinh thái (Tomarket Airdrop & Web3.0 Drop pixel art, chiến dịch $DOGS Token Distribution, Hướng dẫn Claim, Cập nhật nhiệm vụ); và hệ thống Infographics tài chính thị trường Web3 chuyên sâu (Biểu đồ 24H Change Bar Chart, Top Highest Volume 24H, Top Projects by 7D Change, Top 10 Gainers of the Day).",

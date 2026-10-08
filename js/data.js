@@ -94,7 +94,7 @@ const PROJECTS_DATA = [
         height: "1.552288%",
         text: "ABOUT TON",
         icon: "assets/ton-diamond-v2.png",
-        speed: "24s"
+        speed: "25s"
       },
       {
         id: "marquee-brand-identity",
@@ -110,7 +110,7 @@ const PROJECTS_DATA = [
         height: "1.552288%",
         text: "SOCIAL POST",
         icon: "assets/ton-diamond-v2.png",
-        speed: "26s"
+        speed: "25s"
       }
     ],
     summary: "Hệ sinh thái thiết kế toàn diện cho THE TON JOURNAL — Cổng thông tin và truyền thông chuyên sâu thuộc hệ sinh thái TON (The Open Network). Dự án chuẩn hóa và tích hợp trọn vẹn 100% nội dung từ Slide 14 Presentation: Định vị sứ mệnh nền tảng ('News, Insights & Stories from the TON Ecosystem'); Hệ thống Logo nhận diện với biểu tượng Kim cương pha lê 3D đa diện cùng lưới căn chỉnh tỷ lệ đồ họa; Bảng màu chính thức 5 cấp độ chuẩn xác từng mã HEX và RGB (Deep Navy #00103C, TON Royal Blue #0071EC, Electric Sky Blue #0191EE, Vibrant Cyan #00FFFF, Crystal Ice #C8E1FF); Bộ Key Visual 3D khối kim cương phát sáng lơ lửng trên mặt biển cùng các đồng xu TON độc quyền; Chuỗi ấn phẩm Social Post đa dạng cho các sự kiện sinh thái (Tomarket Airdrop & Web3.0 Drop pixel art, chiến dịch $DOGS Token Distribution, Hướng dẫn Claim, Cập nhật nhiệm vụ); và hệ thống Infographics tài chính thị trường Web3 chuyên sâu (Biểu đồ 24H Change Bar Chart, Top Highest Volume 24H, Top Projects by 7D Change, Top 10 Gainers of the Day).",
