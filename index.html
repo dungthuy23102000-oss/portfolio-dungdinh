@@ -1706,15 +1706,20 @@ main {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(5, 7, 10, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(5, 7, 10, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   z-index: 1000;
   display: none;
   align-items: flex-start;
   justify-content: center;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding: 2.5rem 1rem;
+  padding-top: max(1.5rem, env(safe-area-inset-top, 1.5rem));
+  padding-bottom: max(2rem, env(safe-area-inset-bottom, 2rem));
+  padding-left: max(0.75rem, env(safe-area-inset-left, 0.75rem));
+  padding-right: max(0.75rem, env(safe-area-inset-right, 0.75rem));
   opacity: 0;
   transition: opacity var(--transition-normal);
 }
@@ -1722,6 +1727,53 @@ main {
 .modal-overlay.active {
   display: flex;
   opacity: 1;
+}
+
+/* Always-Visible Fixed Floating Close Button for Mobile & Long Presentation Showcases */
+.modal-floating-close-btn {
+  position: fixed;
+  top: max(0.85rem, env(safe-area-inset-top, 0.85rem));
+  right: max(0.85rem, env(safe-area-inset-right, 0.85rem));
+  z-index: 1300;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background-color: rgba(13, 16, 20, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid var(--accent);
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.65), 0 0 16px var(--accent-glow);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.modal-overlay.active .modal-floating-close-btn {
+  display: inline-flex;
+}
+
+.modal-floating-close-btn:hover,
+.modal-floating-close-btn:active {
+  background-color: var(--accent);
+  color: #FFFFFF;
+  transform: scale(1.05);
+  box-shadow: 0 6px 24px var(--accent-glow);
+}
+
+.modal-floating-close-btn svg {
+  stroke-width: 2.5;
+  flex-shrink: 0;
 }
 
 .modal-window {
@@ -1879,11 +1931,13 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 2rem;
-  background-color: var(--bg-glass);
+  padding: 1rem 1.75rem;
+  background-color: rgba(11, 13, 16, 0.94);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-color);
-  z-index: 20;
+  z-index: 50;
+  gap: 0.75rem;
 }
 
 .modal-breadcrumbs {
@@ -1892,23 +1946,33 @@ main {
   color: var(--text-muted);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .modal-breadcrumbs span:last-child {
   color: var(--accent);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .modal-actions-right {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.55rem;
+  flex-shrink: 0;
 }
 
 .modal-nav-btn,
 .modal-close-btn {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
   border-radius: var(--radius-sm);
   background-color: var(--bg-tertiary);
   border: 1px solid var(--border-color);
@@ -1916,14 +1980,45 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   transition: all var(--transition-fast);
 }
 
 .modal-nav-btn:hover,
-.modal-close-btn:hover {
+.modal-nav-btn:active {
   background-color: var(--bg-card-hover);
   color: var(--text-primary);
   border-color: var(--border-color-hover);
+}
+
+.modal-close-btn {
+  background-color: rgba(249, 82, 8, 0.15);
+  border-color: rgba(249, 82, 8, 0.4);
+  color: var(--accent);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:active {
+  background-color: var(--accent);
+  color: #FFFFFF;
+  border-color: var(--accent);
+  transform: scale(1.05);
+}
+
+.modal-bottom-close-action {
+  background-color: var(--accent) !important;
+  color: #FFFFFF !important;
+  border-color: var(--accent) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+.modal-bottom-close-action:hover,
+.modal-bottom-close-action:active {
+  background-color: #ea580c !important;
+  transform: translateY(-2px);
 }
 
 /* Modal Content Container */
@@ -2891,11 +2986,15 @@ main {
 /* Tablets & Mobile Landscape (< 768px) */
 @media (max-width: 768px) {
   :root {
-    --header-height: 68px;
+    --header-height: 64px;
+  }
+
+  .container {
+    padding: 0 1.25rem;
   }
 
   .section {
-    padding: 4.5rem 0;
+    padding: 3.5rem 0;
   }
 
   /* Mobile Navigation Drawer */
@@ -2912,13 +3011,14 @@ main {
     border-bottom: 1px solid var(--border-color);
     flex-direction: column;
     align-items: flex-start;
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 1.5rem;
     gap: 1.25rem;
     transform: translateY(-150%);
     opacity: 0;
     pointer-events: none;
     transition: transform var(--transition-normal), opacity var(--transition-normal);
     box-shadow: var(--shadow-lg);
+    z-index: 99;
   }
 
   .nav-links.mobile-active {
@@ -2928,7 +3028,7 @@ main {
   }
 
   .nav-link {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     width: 100%;
   }
 
@@ -2954,22 +3054,75 @@ main {
   }
 
   .hero-portrait-col {
-    max-width: 260px;
+    max-width: 275px;
     margin: 0 auto;
     width: 100%;
   }
 
-  .hero-main-title {
-    font-size: 2.35rem;
-    letter-spacing: -0.015em;
-    line-height: 1.18;
+  .hero-photo-wrapper {
+    width: 100%;
   }
 
+  .hero-contact-pills {
+    width: 100%;
+    gap: 0.65rem;
+  }
+
+  .hero-contact-pill {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.78rem;
+    gap: 0.6rem;
+    min-width: 0;
+  }
+
+  .hero-contact-pill span:first-of-type {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+  }
+
+  .pill-copy-badge {
+    font-size: 0.65rem;
+    padding: 0.12rem 0.35rem;
+    flex-shrink: 0;
+  }
+
+  .hero-main-title {
+    font-size: clamp(2.15rem, 7.5vw, 2.85rem);
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: nowrap;
+  }
+
+  .hero-title-text {
+    white-space: nowrap;
+  }
+
+  .hero-star-burst-wrap {
+    width: 0.82em;
+    height: 0.82em;
+    flex-shrink: 0;
+  }
+
+  .hero-description {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+
+  /* 3-Column Balanced Mobile Metrics */
   .hero-metrics-strip {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem 1rem;
-    padding: 1.25rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    padding: 1.15rem 0.75rem;
+    text-align: center;
+    border-radius: var(--radius-md);
   }
 
   .metric-divider {
@@ -2978,55 +3131,174 @@ main {
 
   .metric-item {
     padding: 0;
+    align-items: center;
+    text-align: center;
   }
 
-  /* Unified Experience & Capabilities Section Mobile */
+  .metric-num {
+    font-size: clamp(1.4rem, 4.8vw, 1.85rem);
+    line-height: 1.1;
+  }
+
+  .metric-lbl {
+    font-size: clamp(0.68rem, 2.3vw, 0.78rem);
+    line-height: 1.25;
+    margin-top: 0.25rem;
+    text-align: center;
+    white-space: normal;
+  }
+
+  /* Career & Experience Mobile */
+  .experience-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .exp-main-card,
   .sidebar-info-card,
   .dual-info-card {
-    padding: 1.35rem 1.25rem;
+    padding: 1.25rem 1rem;
   }
 
-  .dual-info-grid {
-    grid-template-columns: 1fr;
-    gap: 1.35rem;
+  .card-title-row {
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
   }
 
+  .card-title-text {
+    font-size: clamp(0.92rem, 3.8vw, 1.05rem);
+    min-width: 0;
+  }
+
+  .timeline-stepper {
+    justify-content: flex-start;
+  }
+
+  .timeline-item {
+    grid-template-columns: 24px 1fr;
+    gap: 0.85rem;
+  }
+
+  .timeline-indicator {
+    width: 24px;
+    padding-top: 0.2rem;
+  }
+
+  .timeline-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  .timeline-content {
+    padding-bottom: 1.35rem;
+  }
+
+  .timeline-company-title {
+    font-size: 1.05rem;
+    line-height: 1.25;
+  }
+
+  .timeline-role-text {
+    font-size: 0.84rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .timeline-desc-text {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  /* Tools & Descriptions Mobile Wrapping (Prevents Horizontal Overflow) */
   .tools-compact-grid {
     grid-template-columns: 1fr;
     gap: 0.65rem;
   }
 
-  .hero-description {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+  .compact-tool-item {
+    padding: 0.75rem 0.85rem;
+    gap: 0.75rem;
+    align-items: center;
+    min-width: 0;
   }
 
-  .hero-stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem 1rem;
+  .compact-tool-item .tool-detail-col {
+    min-width: 0;
+    flex: 1;
   }
 
-  .stat-value {
-    font-size: 1.85rem;
+  .tool-desc-tag {
+    font-size: 0.72rem;
+    white-space: normal;
+    line-height: 1.35;
+    margin-top: 0.2rem;
+    display: block;
+  }
+
+  .dual-info-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .compact-edu-item {
+    margin-bottom: 0.85rem;
+  }
+
+  .edu-institution {
+    font-size: 0.92rem;
+    line-height: 1.3;
+  }
+
+  .compact-skills-list {
+    height: auto;
+    justify-content: flex-start;
+    gap: 0.65rem;
+  }
+
+  .compact-skill-row {
+    padding: 0.55rem 0.75rem;
+    gap: 0.65rem;
+  }
+
+  .skill-mini-icon {
+    font-size: 0.95rem;
+    margin-top: 0.1rem;
+  }
+
+  .skill-mini-title {
+    font-size: 0.82rem;
+    line-height: 1.25;
+  }
+
+  .skill-mini-desc {
+    font-size: 0.75rem;
+    line-height: 1.4;
   }
 
   /* Projects Filter */
   .projects-filter-bar {
     flex-direction: column;
     align-items: stretch;
+    gap: 1rem;
   }
 
   .filter-pills {
     overflow-x: auto;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.4rem;
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.45rem;
+  }
+
+  .filter-pills::-webkit-scrollbar {
+    display: none;
   }
 
   .filter-btn {
     white-space: nowrap;
     flex-shrink: 0;
+    font-size: 0.82rem;
+    padding: 0.5rem 0.85rem;
   }
 
   .search-box {
@@ -3035,41 +3307,103 @@ main {
 
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
+  .project-card-body {
+    padding: 1.25rem;
   }
 
-  /* Case Study Modal */
+  .project-card-title {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .project-card-tagline {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  /* Case Study Modal Mobile Refinements */
   .modal-overlay {
-    padding: 0.5rem;
+    padding: 0;
+    padding-top: max(0.5rem, env(safe-area-inset-top, 0.5rem));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom, 1rem));
+    padding-left: max(0.4rem, env(safe-area-inset-left, 0.4rem));
+    padding-right: max(0.4rem, env(safe-area-inset-right, 0.4rem));
     align-items: flex-start;
   }
 
   .modal-window {
     border-radius: var(--radius-md);
+    width: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .modal-window.is-showcase,
+  .modal-window:has(.modal-showcase-mode) {
+    max-width: 100%;
+    width: 100%;
   }
 
   .modal-top-bar {
-    padding: 1rem 1.25rem;
+    padding: 0.75rem 1rem;
+    gap: 0.65rem;
+  }
+
+  .modal-breadcrumbs {
+    font-size: 0.76rem;
+    gap: 0.35rem;
+    cursor: pointer;
+  }
+
+  .modal-breadcrumbs .breadcrumb-root,
+  .modal-breadcrumbs .breadcrumb-sep:first-of-type,
+  .modal-breadcrumbs .breadcrumb-cat {
+    display: none;
+  }
+
+  .modal-breadcrumbs::before {
+    content: "← ";
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .modal-actions-right {
+    gap: 0.4rem;
+  }
+
+  .modal-nav-btn,
+  .modal-close-btn {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
   }
 
   .modal-content-inner {
-    padding: 1.5rem 1.25rem 2.5rem;
+    padding: 1.25rem 1rem 2.5rem;
+  }
+
+  .modal-content-inner.modal-showcase-mode {
+    padding: 0 0 2.5rem 0 !important;
   }
 
   .modal-project-title {
-    font-size: 1.85rem;
+    font-size: 1.65rem;
+    line-height: 1.2;
   }
 
   .modal-project-tagline {
-    font-size: 0.98rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
   }
 
   .modal-meta-grid {
     grid-template-columns: 1fr 1fr;
-    padding: 1rem;
+    padding: 0.85rem;
+    gap: 0.75rem;
   }
 
   .brief-grid {
@@ -3082,58 +3416,173 @@ main {
 
   .outcome-metrics-row {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 1rem;
+  }
+
+  .modal-bottom-nav,
+  .modal-footer-nav {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    align-items: stretch !important;
+    padding: 1.5rem 1rem 0 !important;
+    margin-top: 2rem !important;
+  }
+
+  .modal-nav-action {
+    width: 100% !important;
+    justify-content: center !important;
+    white-space: normal !important;
+    padding: 0.85rem 1rem !important;
+    margin-left: 0 !important;
+    text-align: center !important;
+  }
+
+  /* Contact Section */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-card-item {
+    padding: 0.9rem 1rem;
+    gap: 0.75rem;
+    min-height: 60px;
+  }
+
+  .contact-item-left {
+    gap: 0.75rem;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .contact-item-icon {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+  }
+
+  .contact-item-val {
+    font-size: clamp(0.78rem, 3.4vw, 0.92rem);
+    word-break: break-all;
+  }
+
+  .copy-btn {
+    flex-shrink: 0;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .social-links-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .social-btn {
+    justify-content: center;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.82rem;
+  }
+
+  .contact-form-wrap {
+    padding: 1.25rem 1rem;
   }
 
   .form-row {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
-  .contact-form-wrap {
-    padding: 1.5rem;
+  .form-input,
+  .form-textarea {
+    font-size: 16px !important; /* Critical for iOS Safari zoom prevention */
   }
 
+  .form-submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Footer */
   .footer-content {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+  }
+
+  .footer-brand {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
   }
 }
 
 /* Small Smart Phones (< 480px) */
 @media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .brand-logo-wrap {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-name {
+    font-size: 0.95rem;
+  }
+
+  .nav-actions {
+    gap: 0.35rem;
+  }
+
+  .lang-btn {
+    font-size: 0.68rem;
+    padding: 0.18rem 0.32rem;
+  }
+
+  .theme-toggle-btn,
+  .menu-toggle-btn {
+    width: 34px;
+    height: 34px;
+  }
+
   .hero-main-title {
-    font-size: 2.05rem;
+    font-size: clamp(1.85rem, 8vw, 2.25rem);
   }
 
   .hero-actions,
   .hero-cta-group {
     flex-direction: column;
     align-items: stretch;
+    width: 100%;
   }
 
   .btn {
     width: 100%;
+    justify-content: center;
   }
 
   .modal-meta-grid {
     grid-template-columns: 1fr;
   }
 
-
-  .modal-bottom-nav,
-  .modal-footer-nav {
-    flex-direction: column !important;
-    gap: 1rem;
-    align-items: stretch !important;
+  .modal-floating-close-btn {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 50%;
   }
 
-  .modal-nav-action {
-    justify-content: center;
-    white-space: normal;
-  }
-
-  #modalBottomNextBtn {
-    margin-left: 0;
+  .modal-floating-close-btn .floating-close-text {
+    display: none;
   }
 
   .toast-container {
@@ -3144,6 +3593,33 @@ main {
 
   .toast {
     width: 100%;
+  }
+}
+
+/* Extra Small Phones (< 360px - iPhone SE 1st gen, Galaxy Fold closed) */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .brand-role {
+    display: none;
+  }
+
+  .hero-main-title {
+    font-size: 1.75rem;
+  }
+
+  .metric-num {
+    font-size: 1.35rem;
+  }
+
+  .metric-lbl {
+    font-size: 0.64rem;
+  }
+
+  .social-links-row {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -4301,6 +4777,14 @@ main {
        Case Study Modal (FR-03 & Core Flow)
        ========================================================================= -->
   <div class="modal-overlay" id="caseStudyModal" role="dialog" aria-modal="true" aria-label="Chi tiết Case Study">
+    <!-- Always-Visible Floating Close Button for Mobile & Long Presentation Showcases -->
+    <button type="button" class="modal-floating-close-btn" id="modalFloatingCloseBtn" title="Đóng dự án / Close Project" aria-label="Đóng dự án">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+      <span class="floating-close-text">Đóng</span>
+    </button>
     <div class="modal-window" id="modalContainer">
       <!-- Dynamically filled by js/main.js -->
     </div>
@@ -6498,12 +6982,12 @@ document.addEventListener('DOMContentLoaded', () => {
       modalContainer.innerHTML = `
         <!-- Modal Top Bar -->
         <div class="modal-top-bar">
-          <div class="modal-breadcrumbs">
-            <span>${L('modal_projects')}</span>
-            <span>/</span>
-            <span>${project.categoryLabel}</span>
-            <span>/</span>
-            <span>${project.title}</span>
+          <div class="modal-breadcrumbs" title="${project.categoryLabel} / ${project.title}">
+            <span class="breadcrumb-root">${L('modal_projects')}</span>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-cat">${project.categoryLabel}</span>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current">${project.title}</span>
           </div>
           <div class="modal-actions-right">
             ${project.pdfGuideline ? `
@@ -6585,7 +7069,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
 
           <!-- Bottom Navigation Actions -->
-          <div class="modal-bottom-nav modal-footer-nav" style="width: 100%; max-width: 1000px; padding: 2rem 1.5rem 0; margin-top: 3rem; border-top: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; box-sizing: border-box;">
+          <div class="modal-bottom-nav modal-footer-nav" style="width: 100%; max-width: 1000px; padding: 2rem 1.5rem 0; margin-top: 3rem; border-top: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; box-sizing: border-box; flex-wrap: wrap; gap: 0.75rem;">
             <button class="modal-nav-action" id="modalBottomPrevBtn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="19" y1="12" x2="5" y2="12"></line>
@@ -6594,7 +7078,15 @@ document.addEventListener('DOMContentLoaded', () => {
               <span>${currentLang === 'vi' ? 'Dự án trước: ' + prevProject.title : 'Previous: ' + prevProject.title}</span>
             </button>
             
-            <button class="modal-nav-action" id="modalBottomNextBtn" style="margin-left: auto;">
+            <button class="modal-nav-action modal-bottom-close-action" id="modalBottomCloseBtn" title="${L('modal_close_title')}">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+              <span>${currentLang === 'vi' ? 'Đóng dự án' : 'Close Project'}</span>
+            </button>
+
+            <button class="modal-nav-action" id="modalBottomNextBtn">
               <span>${currentLang === 'vi' ? 'Dự án kế tiếp: ' + nextProject.title : 'Next: ' + nextProject.title}</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -6609,12 +7101,12 @@ document.addEventListener('DOMContentLoaded', () => {
       modalContainer.innerHTML = `
       <!-- Modal Top Bar -->
       <div class="modal-top-bar">
-        <div class="modal-breadcrumbs">
-          <span>${L('modal_projects')}</span>
-          <span>/</span>
-          <span>${project.categoryLabel}</span>
-          <span>/</span>
-          <span>${project.title}</span>
+        <div class="modal-breadcrumbs" title="${project.categoryLabel} / ${project.title}">
+          <span class="breadcrumb-root">${L('modal_projects')}</span>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-cat">${project.categoryLabel}</span>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">${project.title}</span>
         </div>
         <div class="modal-actions-right">
           <button class="modal-nav-btn" id="modalPrevBtn" title="${L('modal_prev_title')}: ${prevProject.title}" aria-label="${L('modal_prev_title')}">
@@ -6807,7 +7299,15 @@ document.addEventListener('DOMContentLoaded', () => {
             <span>${currentLang === 'vi' ? 'Dự án trước: ' + prevProject.title : 'Previous: ' + prevProject.title}</span>
           </button>
           
-          <button class="modal-nav-action" id="modalBottomNextBtn" style="margin-left: auto;">
+          <button class="modal-nav-action modal-bottom-close-action" id="modalBottomCloseBtn" title="${L('modal_close_title')}">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <span>${currentLang === 'vi' ? 'Đóng dự án' : 'Close Project'}</span>
+          </button>
+
+          <button class="modal-nav-action" id="modalBottomNextBtn">
             <span>${currentLang === 'vi' ? 'Dự án kế tiếp: ' + nextProject.title : 'Next: ' + nextProject.title}</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -6824,12 +7324,29 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('modal-open');
     modalOverlay.scrollTop = 0;
 
-    // Update URL hash
-    window.location.hash = project.id;
+    // Update URL hash without breaking history back navigation
+    if (window.location.hash !== '#' + project.id) {
+      window.location.hash = project.id;
+    }
 
-    // Attach internal modal events
+    // Attach internal modal events with touch and click support
     const closeAction = document.getElementById('modalCloseActionBtn');
-    if (closeAction) closeAction.addEventListener('click', closeCaseStudy);
+    if (closeAction) {
+      closeAction.addEventListener('click', closeCaseStudy);
+      closeAction.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        closeCaseStudy();
+      });
+    }
+
+    const bottomClose = document.getElementById('modalBottomCloseBtn');
+    if (bottomClose) {
+      bottomClose.addEventListener('click', closeCaseStudy);
+      bottomClose.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        closeCaseStudy();
+      });
+    }
 
     const prevAction = document.getElementById('modalPrevBtn');
     if (prevAction) prevAction.addEventListener('click', () => openCaseStudy(prevProject.id));
@@ -6842,6 +7359,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const bottomNext = document.getElementById('modalBottomNextBtn');
     if (bottomNext) bottomNext.addEventListener('click', () => openCaseStudy(nextProject.id));
+
+    // Mobile breadcrumb tap to exit/go back
+    const breadcrumbs = modalContainer.querySelector('.modal-breadcrumbs');
+    if (breadcrumbs) {
+      breadcrumbs.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 || e.target.classList.contains('breadcrumb-root')) {
+          closeCaseStudy();
+        }
+      });
+      breadcrumbs.addEventListener('touchend', (e) => {
+        if (window.innerWidth <= 768 || e.target.classList.contains('breadcrumb-root')) {
+          e.preventDefault();
+          closeCaseStudy();
+        }
+      });
+    }
 
     // Color Swatch Click-to-Copy
     document.querySelectorAll('.swatch-card').forEach(card => {
@@ -6875,16 +7408,37 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalContainer) modalContainer.classList.remove('is-showcase');
     activeProjectId = null;
 
-    // Clean hash without jump
+    // Clean hash without leaving a broken back stack
     if (window.location.hash) {
-      history.pushState(null, null, window.location.pathname + window.location.search);
+      history.replaceState(null, '', window.location.pathname + window.location.search);
     }
   }
 
-  // Backdrop click to close
+  // Floating Close Button (always fixed & accessible on mobile & long showcases)
+  const floatingCloseBtn = document.getElementById('modalFloatingCloseBtn');
+  if (floatingCloseBtn) {
+    floatingCloseBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeCaseStudy();
+    });
+    floatingCloseBtn.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeCaseStudy();
+    });
+  }
+
+  // Backdrop click and touch to close
   if (modalOverlay) {
     modalOverlay.addEventListener('click', (e) => {
       if (e.target === modalOverlay) {
+        closeCaseStudy();
+      }
+    });
+    modalOverlay.addEventListener('touchend', (e) => {
+      if (e.target === modalOverlay) {
+        e.preventDefault();
         closeCaseStudy();
       }
     });
@@ -6907,16 +7461,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Handle direct URL hash on page load
+  // Handle direct URL hash on page load, mobile back gesture, or popstate
   function checkUrlHash() {
     const hash = window.location.hash.replace('#', '');
     if (hash) {
       const exists = PROJECTS_DATA.find(p => p.id === hash);
       if (exists) {
-        openCaseStudy(exists.id);
+        if (activeProjectId !== exists.id) {
+          openCaseStudy(exists.id);
+        }
+      } else {
+        closeCaseStudy();
+      }
+    } else {
+      if (modalOverlay && modalOverlay.classList.contains('active')) {
+        closeCaseStudy();
       }
     }
   }
+
+  // Global window exposure for debugging and external controls
+  window.closeCaseStudy = closeCaseStudy;
+  window.openCaseStudy = openCaseStudy;
 
   // =========================================================================
   // Contact Form Handling with Supabase Integration (FR-05)
@@ -7185,8 +7751,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial Render
   renderProjects();
   checkUrlHash();
-
   window.addEventListener('hashchange', checkUrlHash);
+  window.addEventListener('popstate', checkUrlHash);
 });
 
   </script>

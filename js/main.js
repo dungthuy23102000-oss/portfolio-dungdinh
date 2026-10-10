@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
 
           <!-- Bottom Navigation Actions -->
-          <div class="modal-bottom-nav modal-footer-nav" style="width: 100%; max-width: 1000px; padding: 2rem 1.5rem 0; margin-top: 3rem; border-top: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; box-sizing: border-box;">
+          <div class="modal-bottom-nav modal-footer-nav" style="width: 100%; max-width: 1000px; padding: 2rem 1.5rem 0; margin-top: 3rem; border-top: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; box-sizing: border-box; flex-wrap: wrap; gap: 0.75rem;">
             <button class="modal-nav-action" id="modalBottomPrevBtn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="19" y1="12" x2="5" y2="12"></line>
@@ -339,7 +339,15 @@ document.addEventListener('DOMContentLoaded', () => {
               <span>${currentLang === 'vi' ? 'Dự án trước: ' + prevProject.title : 'Previous: ' + prevProject.title}</span>
             </button>
             
-            <button class="modal-nav-action" id="modalBottomNextBtn" style="margin-left: auto;">
+            <button class="modal-nav-action modal-bottom-close-action" id="modalBottomCloseBtn" title="Đóng dự án / Close Project">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+              <span>${currentLang === 'vi' ? 'Đóng dự án' : 'Close Project'}</span>
+            </button>
+
+            <button class="modal-nav-action" id="modalBottomNextBtn">
               <span>${currentLang === 'vi' ? 'Dự án kế tiếp: ' + nextProject.title : 'Next: ' + nextProject.title}</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -552,7 +560,15 @@ document.addEventListener('DOMContentLoaded', () => {
             <span>${currentLang === 'vi' ? 'Dự án trước: ' + prevProject.title : 'Previous: ' + prevProject.title}</span>
           </button>
           
-          <button class="modal-nav-action" id="modalBottomNextBtn" style="margin-left: auto;">
+          <button class="modal-nav-action modal-bottom-close-action" id="modalBottomCloseBtn" title="Đóng dự án / Close Project">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <span>${currentLang === 'vi' ? 'Đóng dự án' : 'Close Project'}</span>
+          </button>
+
+          <button class="modal-nav-action" id="modalBottomNextBtn">
             <span>${currentLang === 'vi' ? 'Dự án kế tiếp: ' + nextProject.title : 'Next: ' + nextProject.title}</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -569,12 +585,29 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('modal-open');
     modalOverlay.scrollTop = 0;
 
-    // Update URL hash
-    window.location.hash = project.id;
+    // Update URL hash without breaking history back navigation
+    if (window.location.hash !== '#' + project.id) {
+      window.location.hash = project.id;
+    }
 
-    // Attach internal modal events
+    // Attach internal modal events with touch and click support
     const closeAction = document.getElementById('modalCloseActionBtn');
-    if (closeAction) closeAction.addEventListener('click', closeCaseStudy);
+    if (closeAction) {
+      closeAction.addEventListener('click', closeCaseStudy);
+      closeAction.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        closeCaseStudy();
+      });
+    }
+
+    const bottomClose = document.getElementById('modalBottomCloseBtn');
+    if (bottomClose) {
+      bottomClose.addEventListener('click', closeCaseStudy);
+      bottomClose.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        closeCaseStudy();
+      });
+    }
 
     const prevAction = document.getElementById('modalPrevBtn');
     if (prevAction) prevAction.addEventListener('click', () => openCaseStudy(prevProject.id));
@@ -587,6 +620,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const bottomNext = document.getElementById('modalBottomNextBtn');
     if (bottomNext) bottomNext.addEventListener('click', () => openCaseStudy(nextProject.id));
+
+    // Mobile breadcrumb tap to exit/go back
+    const breadcrumbs = modalContainer.querySelector('.modal-breadcrumbs');
+    if (breadcrumbs) {
+      breadcrumbs.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 || e.target.classList.contains('breadcrumb-root')) {
+          closeCaseStudy();
+        }
+      });
+      breadcrumbs.addEventListener('touchend', (e) => {
+        if (window.innerWidth <= 768 || e.target.classList.contains('breadcrumb-root')) {
+          e.preventDefault();
+          closeCaseStudy();
+        }
+      });
+    }
 
     // Color Swatch Click-to-Copy
     document.querySelectorAll('.swatch-card').forEach(card => {
@@ -620,16 +669,37 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalContainer) modalContainer.classList.remove('is-showcase');
     activeProjectId = null;
 
-    // Clean hash without jump
+    // Clean hash without leaving a broken back stack
     if (window.location.hash) {
-      history.pushState(null, null, window.location.pathname + window.location.search);
+      history.replaceState(null, '', window.location.pathname + window.location.search);
     }
   }
 
-  // Backdrop click to close
+  // Floating Close Button (always fixed & accessible on mobile & long showcases)
+  const floatingCloseBtn = document.getElementById('modalFloatingCloseBtn');
+  if (floatingCloseBtn) {
+    floatingCloseBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeCaseStudy();
+    });
+    floatingCloseBtn.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeCaseStudy();
+    });
+  }
+
+  // Backdrop click and touch to close
   if (modalOverlay) {
     modalOverlay.addEventListener('click', (e) => {
       if (e.target === modalOverlay) {
+        closeCaseStudy();
+      }
+    });
+    modalOverlay.addEventListener('touchend', (e) => {
+      if (e.target === modalOverlay) {
+        e.preventDefault();
         closeCaseStudy();
       }
     });
@@ -652,16 +722,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Handle direct URL hash on page load
+  // Handle direct URL hash on page load, mobile back gesture, or popstate
   function checkUrlHash() {
     const hash = window.location.hash.replace('#', '');
     if (hash) {
       const exists = PROJECTS_DATA.find(p => p.id === hash);
       if (exists) {
-        openCaseStudy(exists.id);
+        if (activeProjectId !== exists.id) {
+          openCaseStudy(exists.id);
+        }
+      } else {
+        closeCaseStudy();
+      }
+    } else {
+      if (modalOverlay && modalOverlay.classList.contains('active')) {
+        closeCaseStudy();
       }
     }
   }
+
+  // Global window exposure for debugging and external controls
+  window.closeCaseStudy = closeCaseStudy;
+  window.openCaseStudy = openCaseStudy;
 
   // =========================================================================
   // Contact Form Handling with Supabase Integration (FR-05)
@@ -921,6 +1003,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial Render
   renderProjects();
   checkUrlHash();
-
   window.addEventListener('hashchange', checkUrlHash);
+  window.addEventListener('popstate', checkUrlHash);
 });

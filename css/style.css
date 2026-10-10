@@ -1675,15 +1675,20 @@ main {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(5, 7, 10, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(5, 7, 10, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   z-index: 1000;
   display: none;
   align-items: flex-start;
   justify-content: center;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding: 2.5rem 1rem;
+  padding-top: max(1.5rem, env(safe-area-inset-top, 1.5rem));
+  padding-bottom: max(2rem, env(safe-area-inset-bottom, 2rem));
+  padding-left: max(0.75rem, env(safe-area-inset-left, 0.75rem));
+  padding-right: max(0.75rem, env(safe-area-inset-right, 0.75rem));
   opacity: 0;
   transition: opacity var(--transition-normal);
 }
@@ -1691,6 +1696,53 @@ main {
 .modal-overlay.active {
   display: flex;
   opacity: 1;
+}
+
+/* Always-Visible Fixed Floating Close Button for Mobile & Long Presentation Showcases */
+.modal-floating-close-btn {
+  position: fixed;
+  top: max(0.85rem, env(safe-area-inset-top, 0.85rem));
+  right: max(0.85rem, env(safe-area-inset-right, 0.85rem));
+  z-index: 1300;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background-color: rgba(13, 16, 20, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid var(--accent);
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.65), 0 0 16px var(--accent-glow);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.modal-overlay.active .modal-floating-close-btn {
+  display: inline-flex;
+}
+
+.modal-floating-close-btn:hover,
+.modal-floating-close-btn:active {
+  background-color: var(--accent);
+  color: #FFFFFF;
+  transform: scale(1.05);
+  box-shadow: 0 6px 24px var(--accent-glow);
+}
+
+.modal-floating-close-btn svg {
+  stroke-width: 2.5;
+  flex-shrink: 0;
 }
 
 .modal-window {
@@ -1847,11 +1899,13 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 2rem;
-  background-color: var(--bg-glass);
+  padding: 1rem 1.75rem;
+  background-color: rgba(11, 13, 16, 0.94);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-color);
-  z-index: 20;
+  z-index: 50;
+  gap: 0.75rem;
 }
 
 .modal-breadcrumbs {
@@ -1860,17 +1914,26 @@ main {
   color: var(--text-muted);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .modal-breadcrumbs span:last-child {
   color: var(--accent);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .modal-actions-right {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.55rem;
+  flex-shrink: 0;
 }
 
 .modal-nav-btn,
@@ -1884,11 +1947,26 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   transition: all var(--transition-fast);
 }
 
-.modal-nav-btn:hover,
-.modal-close-btn:hover {
+.modal-close-btn {
+  background-color: rgba(249, 82, 8, 0.12);
+  border-color: rgba(249, 82, 8, 0.35);
+  color: var(--accent);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:active {
+  background-color: var(--accent);
+  color: #FFFFFF;
+  border-color: var(--accent);
+}
+
+.modal-nav-btn:hover {
   background-color: var(--bg-card-hover);
   color: var(--text-primary);
   border-color: var(--border-color-hover);
@@ -2215,6 +2293,8 @@ main {
   flex-direction: row !important;
   align-items: center !important;
   justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 0.75rem !important;
   padding-top: 2rem;
   border-top: 1px solid var(--border-color);
   margin-top: 3rem;
@@ -2237,6 +2317,8 @@ main {
   cursor: pointer;
   white-space: nowrap;
   text-decoration: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .modal-nav-action:hover {
@@ -2244,12 +2326,21 @@ main {
   border-color: var(--border-color-hover);
 }
 
-.modal-nav-action svg {
-  flex-shrink: 0;
+.modal-bottom-close-action {
+  background-color: rgba(249, 82, 8, 0.12) !important;
+  border-color: rgba(249, 82, 8, 0.45) !important;
+  color: var(--accent) !important;
 }
 
-#modalBottomNextBtn {
-  margin-left: auto;
+.modal-bottom-close-action:hover,
+.modal-bottom-close-action:active {
+  background-color: var(--accent) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 16px var(--accent-glow) !important;
+}
+
+.modal-nav-action svg {
+  flex-shrink: 0;
 }
 
 /* ==========================================================================
