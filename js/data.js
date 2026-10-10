@@ -409,58 +409,69 @@ const PROJECTS_DATA = [
   {
     id: "bong-sen",
     title: "Bông Sen Global Admired",
-    tagline: "Thiết kế Logo & Hệ thống Nhận diện Thương hiệu Nhà máy Sản xuất Thực phẩm",
+    tagline: "Cẩm nang Quy chuẩn Nhận diện Thương hiệu Toàn diện — Biểu tượng của sản xuất hiện đại và phát triển bền vững",
     category: "brand",
-    categoryLabel: "Logo & Nhận diện thương hiệu",
-    client: "Bông Sen Global Admired Food Manufacturing",
-    role: "Lead Brand Identity Designer",
-    duration: "6 tuần",
-    services: ["Thiết kế Logo", "Quy chuẩn nhận diện thương hiệu", "Nhãn mác & Bao bì", "Brand Guidelines"],
-    featured: false,
-    accentColor: "#15803D",
-    summary: "Xây dựng biểu trưng logo và hệ thống nhận diện thương hiệu toàn diện cho Bông Sen Global Admired — nhà máy chế biến và sản xuất thực phẩm xuất khẩu quy mô lớn, kết hợp giữa biểu tượng hoa sen truyền thống và bánh răng công nghiệp hiện đại.",
+    categoryLabel: "Brand Identity & Packaging",
+    client: "Nhà máy Nestlé Bông Sen (Nestlé Bong Sen Factory)",
+    role: "Lead Brand Identity & Graphic Designer",
+    duration: "4 tuần",
+    services: ["Brand Guidelines", "Quy chuẩn Logo & TPM", "Định vị thương hiệu", "Hệ thống màu sắc & Typography", "Ấn phẩm ứng dụng thực tế"],
+    featured: true,
+    accentColor: "#239929",
+    showcaseImage: "assets/bong-sen-showcase.jpg",
+    showcaseImages: Array.from({ length: 16 }, (_, i) => "assets/bong-sen/page-" + String(i + 1).padStart(2, "0") + ".jpg"),
+    pdfGuideline: "assets/Bongsenglobal.pdf",
+    aspectRatio: "1600 / 14400",
+    showcaseBg: "#ffffff",
+    summary: "Bộ cẩm nang Quy chuẩn Nhận diện Thương hiệu toàn diện 16 trang cho Bông Sen Global Admired (Nhà máy Nestlé Bông Sen) — biểu tượng của sản xuất hiện đại và phát triển bền vững thuộc Tập đoàn Nestlé Thụy Sĩ tại Việt Nam với triết lý 'Good food, Good life'. Dự án tích hợp trọn vẹn 100% nội dung từ tài liệu Brand Guideline chính thức: 01. Định vị thương hiệu & 4 giá trị cốt lõi (Hiện đại, Chất lượng, Bền vững, Phát triển); 02. Quy chuẩn Logo kết hợp 4 yếu tố biểu trưng (Mặt trời, Nhà máy, Bánh răng công nghiệp, Sữa hộp) cùng phiên bản chuẩn hóa TPM (Total Productive Management), quy tắc khoảng cách an toàn safezone và tỷ lệ phóng đại; 03. Hệ màu nhận diện 4 sắc độ quy chuẩn chuẩn xác từng mã HEX & RGB (Nestlé Fresh Green #239929, Deep Forest Green #036D08, Solar Energy Yellow-Green #EDFC71, Purity White #FFFFFF); 04. Hệ thống Typography độc quyền SVN-Gilroy chuẩn mực với đầy đủ 10 weights (Thin đến Black), chữ nghiêng Italic và bộ ký tự tiếng Việt toàn diện; cùng phối cảnh ứng dụng thực tế trên biển hiệu nhà máy và ấn phẩm truyền thông.",
     brief: {
-      clientIntro: "Bông Sen Global Admired là nhà máy sản xuất và chế biến thực phẩm định hướng xuất khẩu, áp dụng quy trình công nghệ cao và tiêu chuẩn vệ sinh an toàn thực phẩm quốc tế.",
-      challenge: "Thương hiệu cần một bộ nhận diện vừa toát lên tính hiện đại, quy chuẩn nhà máy công nghiệp quốc tế, vừa lưu giữ được vẻ đẹp bản sắc văn hóa Việt Nam nhằm tạo ấn tượng mạnh mẽ với các đối tác thương mại toàn cầu.",
-      objective: "Sáng tạo logo biểu trưng kết hợp tinh tế giữa búp sen và bánh răng chuyển động; chuẩn hóa hệ thống ấn phẩm nhận diện từ biển hiệu nhà máy, đồng phục kỹ sư đến tem nhãn bao bì thực phẩm xuất khẩu."
+      clientIntro: "Nhà máy Nestlé Bông Sen (Nestlé Bong Sen Factory) được định vị là một trong những nhà máy hiện đại của Tập đoàn Nestlé Thụy Sĩ tại Việt Nam, đại diện cho tinh thần đổi mới, ứng dụng công nghệ tiên tiến và cam kết về chất lượng sản phẩm. Lấy cảm hứng từ hình ảnh Mặt Trời, bánh răng công nghiệp, kiến trúc nhà máy và sản phẩm sữa hộp, bộ nhận diện thương hiệu thể hiện sự kết nối giữa công nghệ sản xuất, con người và những giá trị thiết thực dành cho cộng đồng. Với định hướng phát triển bền vững, Nestlé Bông Sen hướng tới hình ảnh một nhà máy hiện đại, vận hành hiệu quả, đề cao chất lượng và không ngừng đổi mới để tạo ra những sản phẩm đáng tin cậy.",
+      challenge: "Cần xây dựng hệ thống quy chuẩn nhận diện thương hiệu toàn diện 16 trang cho Nhà máy Nestlé Bông Sen nhằm chuẩn hóa biểu tượng logo, đồng bộ định hướng xuất khẩu và năng lực sản xuất chuẩn quốc tế TPM (Total Productive Management), đảm bảo hiển thị sắc nét từ các ấn phẩm nhỏ nhất đến hệ thống biển hiệu nhà máy quy mô lớn.",
+      objective: "Thiết kế trọn vẹn bộ cẩm nang Brand Guidelines 16 trang: Chuẩn hóa 4 giá trị cốt lõi; hệ thống logo biểu trưng kết hợp Mặt trời - Nhà máy - Bánh răng - Hộp sữa và chứng nhận TPM; khoảng cách an toàn safezone; bảng màu chính thức 4 sắc độ; và hệ thống font chữ SVN-Gilroy 10 weights hỗ trợ tiếng Việt đầy đủ."
     },
     concept: {
-      bigIdea: "Tinh hoa Sen Việt vươn tầm thế giới — Sự giao thoa giữa nguồn nông sản sạch và năng lực công nghiệp chế biến hiện đại.",
-      approach: "Biểu tượng hoa sen 8 cánh tỏa rạng hòa quyện cùng bánh răng cơ khí công nghiệp và giọt nước tinh túy, sử dụng sắc xanh lục bảo tượng trưng cho thiên nhiên, độ tươi ngon và sự phát triển bền vững.",
+      bigIdea: "Nguồn năng lượng bền vững nuôi dưỡng con người mỗi ngày — Sự kết nối hoàn hảo giữa công nghệ sản xuất, con người và thiên nhiên.",
+      approach: "Ý tưởng thiết kế logo hội tụ 4 yếu tố cốt lõi: Mặt trời (Tầm nhìn & nguồn năng lượng cốt lõi), Nhà máy (Hệ thống & năng lực thực thi), Bánh răng (Quy trình & sự phối hợp trơn tru), và Sữa hộp (Sản phẩm – giá trị nuôi dưỡng cuối cùng). Mọi giá trị bền vững đều bắt đầu từ một nguồn năng lượng đúng: khi có tầm nhìn đủ sáng, hệ thống vững vàng và quy trình ăn khớp, giá trị tạo ra nuôi dưỡng con người mỗi ngày. Một tổ chức tốt không chạy bằng áp lực, mà vận hành bằng năng lượng, sự phối hợp và mục tiêu chung.",
       designPrinciples: [
-        { title: "Industrial Harmony", desc: "Đường nét cân đối, chuẩn xác theo tỷ lệ hình học tạo cảm giác vững chãi và quy mô công nghiệp." },
-        { title: "National Essence", desc: "Hình tượng hoa sen cách điệu gợi nhắc nguồn gốc nông sản Việt Nam thuần khiết và thanh cao." },
-        { title: "Export Scalability", desc: "Dễ dàng in ấn dập nổi, khắc laser trên máy móc, bao bì carton và các phương tiện vận tải lớn." }
+        { title: "Hiện đại (Modernity)", desc: "Thể hiện năng lực sản xuất, quy trình vận hành chuyên nghiệp và định hướng ứng dụng công nghệ tiên tiến." },
+        { title: "Chất lượng (Quality)", desc: "Đề cao tính nhất quán, độ tin cậy và tiêu chuẩn chất lượng khắt khe trong từng sản phẩm Nestlé." },
+        { title: "Bền vững (Sustainability)", desc: "Hướng đến sử dụng tài nguyên hiệu quả, giảm phát thải, có trách nhiệm với môi trường và cộng đồng." },
+        { title: "Phát triển (Growth)", desc: "Biểu trưng cho nguồn năng lượng tích cực, tinh thần đổi mới liên tục và khát vọng vươn lên tầm cao mới." }
       ]
     },
     designSystem: {
       colors: [
-        { name: "Lotus Emerald Green", hex: "#15803D", role: "Primary Brand Signature" },
-        { name: "Deep Factory Green", hex: "#14532D", role: "Industrial Contrast" },
-        { name: "Purity White", hex: "#FFFFFF", role: "Clean Packaging Base" },
-        { name: "Slate Silver", hex: "#64748B", role: "Technical Specification" }
+        { name: "Nestlé Fresh Leaf Green", hex: "#239929", role: "Primary Brand Signature (RGB: 35, 153, 41)" },
+        { name: "Nestlé Deep Forest Green", hex: "#036D08", role: "Dark Contrast & Industrial Solid (RGB: 3, 109, 8)" },
+        { name: "Solar Energy Yellow-Green", hex: "#EDFC71", role: "Vitality Accent & Highlight (RGB: 237, 252, 113)" },
+        { name: "Purity White", hex: "#FFFFFF", role: "Clean Foundation & Light Background (RGB: 255, 255, 255)" }
       ],
       typography: {
-        headline: "Montserrat & Be Vietnam Pro — Cứng cáp, hiện đại, chuẩn hóa quốc tế",
-        body: "Plus Jakarta Sans — Rõ ràng, tối ưu cho thông tin dinh dưỡng và thành phần"
+        headline: "SVN-Gilroy (Bold / ExtraBold / Heavy / Black) — Font sans-serif hiện đại với đường nét gọn gàng, cấu trúc rõ ràng và tỷ lệ cân đối, mang lại cảm giác trẻ trung, năng động nhưng vẫn chuyên nghiệp",
+        body: "SVN-Gilroy (Regular / Medium / Semibold) — Các nét chữ chắc khỏe, bo cong vừa phải tạo sự thân thiện và dễ đọc, tối ưu cho nội dung, social, UI, app và ấn phẩm in ấn",
+        weights: "Hệ thống 10 độ dày chữ (10 Weights): Thin, Xlight, Light, Regular, Medium, Semibold, Bold, XBold, Heavy, Black kèm bản nghiêng Italic tương ứng, hỗ trợ đầy đủ bảng ký tự tiếng Việt có dấu"
       }
     },
     deliverables: [
-      "Hệ thống biểu trưng Logo chính thức, Logo âm bản và biến thể màu đơn sắc",
-      "Bộ Brand Guidelines 50 trang hướng dẫn quy chuẩn ứng dụng nhận diện",
-      "Thiết kế biển hiệu nhà xưởng, hệ thống bảng chỉ dẫn nội bộ & đồng phục kỹ sư",
-      "Quy chuẩn bao bì thùng carton xuất khẩu và tem nhãn chứng nhận chất lượng"
+      "Bộ cẩm nang Brand Guidelines Bông Sen Global Admired hoàn chỉnh 16 trang định dạng PDF chất lượng cao",
+      "Hệ thống Logo chính thức Bông Sen Factory kết hợp biểu tượng Mặt trời, Nhà máy, Bánh răng công nghiệp và Hộp sữa",
+      "Quy chuẩn biến thể Logo đứng (Vertical), biến thể Logo ngang (Horizontal) và phiên bản tích hợp chứng nhận TPM quốc tế",
+      "Quy tắc khoảng trống bắt buộc (Safe zone clear space) và tiêu chuẩn kích thước tối thiểu / tỷ lệ phóng đại",
+      "Bảng màu nhận diện 4 sắc độ quy chuẩn (#239929, #036D08, #EDFC71, #FFFFFF) kèm quy tắc tương phản trên 3 nền màu",
+      "Hệ thống typography SVN-Gilroy 10 weights hoàn chỉnh kèm bảng mã ký tự tiếng Việt và quy tắc phân cấp văn bản",
+      "Bộ mockups phối cảnh nhận diện thực tế trên biển hiệu nhà xưởng và ấn phẩm truyền thông thương hiệu"
     ],
     outcome: {
-      summary: "Bộ nhận diện mới giúp Bông Sen khẳng định vị thế nhà sản xuất thực phẩm uy tín, tạo dấu ấn mạnh mẽ tại các hội chợ triển lãm nông sản quốc tế.",
+      summary: "Bộ cẩm nang quy chuẩn thương hiệu đã chuẩn hóa toàn diện hình ảnh Nhà máy Nestlé Bông Sen, khẳng định vị thế nhà máy thực phẩm công nghệ cao kiểu mẫu và tạo sự đồng bộ 100% trong toàn bộ chuỗi sản xuất và truyền thông.",
       metrics: [
-        { label: "Ký kết hợp đồng xuất khẩu", value: "+45%" },
-        { label: "Mức độ hài lòng đối tác", value: "98%" },
-        { label: "Nhận diện đồng bộ nhà xưởng", value: "100%" }
+        { label: "Trang Brand Guidelines", value: "16 Trang" },
+        { label: "Weights Font SVN-Gilroy", value: "10 Weights" },
+        { label: "Đồng bộ nhận diện nhà máy", value: "100%" },
+        { label: "Tiêu chuẩn quản lý TPM", value: "Global Standard" }
       ],
-      detail: "Thiết kế nhận được phản hồi tích cực từ các đối tác thu mua quốc tế tại châu Âu và châu Á về mức độ chỉn chu và tính chuyên nghiệp."
+      detail: "Quy chuẩn thiết kế được áp dụng đồng bộ tại các phân xưởng, văn phòng và các ấn phẩm đối ngoại, nhận được sự đánh giá rất cao từ ban lãnh đạo Tập đoàn Nestlé về độ chính xác và tính thẩm mỹ."
     },
-    coverGradient: "linear-gradient(135deg, #052e16 0%, #14532d 50%, #15803d 100%)",
+    coverGradient: "linear-gradient(135deg, #036d08 0%, #239929 50%, #edfc71 100%)",
     svgVisual: "bong-sen"
   },
   {
