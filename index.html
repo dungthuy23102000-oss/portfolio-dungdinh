@@ -1815,6 +1815,22 @@ main {
   background-color: transparent;
 }
 
+.project-showcase-full.has-gap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-showcase-full.has-gap > img:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+@supports (gap: 20px) {
+  .project-showcase-full.has-gap > img:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+
 .project-showcase-full img {
   width: 100%;
   height: auto;
@@ -5250,7 +5266,8 @@ const PROJECTS_DATA = [
     showcaseImages: Array.from({ length: 16 }, (_, i) => "assets/bong-sen/page-" + String(i + 1).padStart(2, "0") + ".jpg"),
     pdfGuideline: "assets/Bongsenglobal.pdf",
     aspectRatio: "1600 / 14400",
-    showcaseBg: "#ffffff",
+    showcaseBg: "transparent",
+    showcaseGap: "20px",
     summary: "Bộ cẩm nang Quy chuẩn Nhận diện Thương hiệu toàn diện 16 trang cho Bông Sen Global Admired (Nhà máy Nestlé Bông Sen) — biểu tượng của sản xuất hiện đại và phát triển bền vững thuộc Tập đoàn Nestlé Thụy Sĩ tại Việt Nam với triết lý 'Good food, Good life'. Dự án tích hợp trọn vẹn 100% nội dung từ tài liệu Brand Guideline chính thức: 01. Định vị thương hiệu & 4 giá trị cốt lõi (Hiện đại, Chất lượng, Bền vững, Phát triển); 02. Quy chuẩn Logo kết hợp 4 yếu tố biểu trưng (Mặt trời, Nhà máy, Bánh răng công nghiệp, Sữa hộp) cùng phiên bản chuẩn hóa TPM (Total Productive Management), quy tắc khoảng cách an toàn safezone và tỷ lệ phóng đại; 03. Hệ màu nhận diện 4 sắc độ quy chuẩn chuẩn xác từng mã HEX & RGB (Nestlé Fresh Green #239929, Deep Forest Green #036D08, Solar Energy Yellow-Green #EDFC71, Purity White #FFFFFF); 04. Hệ thống Typography độc quyền SVN-Gilroy chuẩn mực với đầy đủ 10 weights (Thin đến Black), chữ nghiêng Italic và bộ ký tự tiếng Việt toàn diện; cùng phối cảnh ứng dụng thực tế trên biển hiệu nhà máy và ấn phẩm truyền thông.",
     brief: {
       clientIntro: "Nhà máy Nestlé Bông Sen (Nestlé Bong Sen Factory) được định vị là một trong những nhà máy hiện đại của Tập đoàn Nestlé Thụy Sĩ tại Việt Nam, đại diện cho tinh thần đổi mới, ứng dụng công nghệ tiên tiến và cam kết về chất lượng sản phẩm. Lấy cảm hứng từ hình ảnh Mặt Trời, bánh răng công nghiệp, kiến trúc nhà máy và sản phẩm sữa hộp, bộ nhận diện thương hiệu thể hiện sự kết nối giữa công nghệ sản xuất, con người và những giá trị thiết thực dành cho cộng đồng. Với định hướng phát triển bền vững, Nestlé Bông Sen hướng tới hình ảnh một nhà máy hiện đại, vận hành hiệu quả, đề cao chất lượng và không ngừng đổi mới để tạo ra những sản phẩm đáng tin cậy.",
@@ -5375,7 +5392,8 @@ const PROJECTS_DATA = [
     showcaseImages: Array.from({ length: 43 }, (_, i) => "assets/taiyo/page-" + String(i + 1).padStart(2, "0") + ".jpg").filter(p => !p.endsWith("page-02.jpg")),
     pdfGuideline: "assets/Taiyotea-Brand-guideline.pdf",
     aspectRatio: "1600 / 39984",
-    showcaseBg: "#ffffff",
+    showcaseBg: "transparent",
+    showcaseGap: "20px",
     summary: "Hệ thống quy chuẩn nhận diện thương hiệu toàn diện (Brand Guideline 43 trang) cho Taiyo tea (太陽のお茶) — thương hiệu trà Nhật Bản cao cấp mang tinh thần Hòa - Kính - Thanh - Tịnh với thông điệp 'Bình thản uống trà, bình thản sống'. Dự án bao gồm đầy đủ 6 phần: Giới thiệu thương hiệu & Triết lý trà đạo; Quy chuẩn Logo kết hợp lá trà - chữ Hán 太陽 - quốc kỳ Nhật & Typeface UTM AKASHI; Bộ nhận diện văn phòng Stationery; Thiết kế bao bì hộp thiếc và hộp túi lọc (Genmaicha, Sencha, Hojicha); Ấn phẩm quảng cáo POSM và Hệ thống quà tặng cao cấp.",
     brief: {
       clientIntro: "Taiyo tea (太陽のお茶) là thương hiệu trà đạo Nhật Bản cao cấp với thông điệp 'Bình thản uống trà, bình thản sống', hội tụ 4 giá trị cốt lõi: Hòa - Kính - Thanh - Tịnh.",
@@ -7027,7 +7045,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <!-- Full Project Presentation Showcase (Edge-to-Edge) -->
         <div class="modal-content-inner modal-showcase-mode" style="padding: 0 0 3.5rem 0; width: 100%; display: flex; flex-direction: column; align-items: center;">
-          <div class="project-showcase-full" style="width: 100%; margin: 0; padding: 0; background: ${project.showcaseBg || 'transparent'}; position: relative;">
+          <div class="project-showcase-full ${project.showcaseGap ? 'has-gap' : ''}" style="width: 100%; margin: 0; padding: 0; background: ${project.showcaseBg || 'transparent'}; position: relative; ${project.showcaseGap ? `display: flex; flex-direction: column; gap: ${project.showcaseGap};` : ''}">
             ${(project.showcaseImages && project.showcaseImages.length > 0) ? 
               project.showcaseImages.map((pageSrc, idx) => `
                 <img src="${encodeURI(pageSrc)}" alt="${project.title} - Trang ${idx + 1}" style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" loading="${idx < 3 ? 'eager' : 'lazy'}">

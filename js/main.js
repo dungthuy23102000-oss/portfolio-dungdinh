@@ -295,8 +295,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <!-- Full Project Presentation Showcase (Edge-to-Edge) -->
         <div class="modal-content-inner modal-showcase-mode" style="padding: 0 0 3.5rem 0; width: 100%; display: flex; flex-direction: column; align-items: center;">
-          <div class="project-showcase-full" style="width: 100%; margin: 0; padding: 0; background: ${project.showcaseBg || 'transparent'}; position: relative;">
-            <img src="${safeSrc}" alt="${project.title} - Full Presentation" style="width: 100%; height: auto; display: block; margin: 0; padding: 0; ${project.aspectRatio ? `aspect-ratio: ${project.aspectRatio};` : 'aspect-ratio: 5303 / 32768;'}" loading="eager">
+          <div class="project-showcase-full ${project.showcaseGap ? 'has-gap' : ''}" style="width: 100%; margin: 0; padding: 0; background: ${project.showcaseBg || 'transparent'}; position: relative; ${project.showcaseGap ? `display: flex; flex-direction: column; gap: ${project.showcaseGap};` : ''}">
+            ${(project.showcaseImages && project.showcaseImages.length > 0) ? 
+              project.showcaseImages.map((pageSrc, idx) => `
+                <img src="${encodeURI(pageSrc)}" alt="${project.title} - Trang ${idx + 1}" style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" loading="${idx < 3 ? 'eager' : 'lazy'}">
+              `).join('')
+              : `
+                <img src="${safeSrc}" alt="${project.title} - Full Presentation" style="width: 100%; height: auto; display: block; margin: 0; padding: 0; ${project.aspectRatio ? `aspect-ratio: ${project.aspectRatio};` : 'aspect-ratio: 5303 / 32768;'}" loading="eager">
+              `
+            }
             ${project.showcaseVideo ? `
               <div class="showcase-video-overlay" style="position: absolute; top: ${project.showcaseVideo.top}; left: ${project.showcaseVideo.left}; width: ${project.showcaseVideo.width}; height: ${project.showcaseVideo.height}; border-radius: ${project.showcaseVideo.borderRadius}; overflow: hidden; background-color: #1a0226;">
                 <video src="${encodeURI(project.showcaseVideo.src)}" autoplay loop muted playsinline webkit-playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>

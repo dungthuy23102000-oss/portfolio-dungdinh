@@ -1783,6 +1783,22 @@ main {
   container-type: inline-size;
 }
 
+.project-showcase-full.has-gap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-showcase-full.has-gap > img:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+@supports (gap: 20px) {
+  .project-showcase-full.has-gap > img:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+
 .project-showcase-full img {
   width: 100%;
   height: auto;
